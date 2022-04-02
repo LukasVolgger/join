@@ -16,34 +16,20 @@
     <!-- bootstrap End -->
     <link rel="stylesheet" href="mainStyle.css">
 
+    <script src="scripts/include.js"></script>
     <title>Document</title>
 </head>
 
-<body>
+<body onload="includeHTML()">
     <div class="container-fluid">
         <!-- Content here -->
         <div class="grid d-flex justify-content-between">
             <div class="row">
-                <!-- Left Container Beginn -->
-                <div class="col-2 left-container" style="height: 100vh; background-color: #1E3190;">
-                    <div>
-                        <div class="logo-img">
-                            <img src="imgs/logo.png" alt="">
-                        </div>
-                        <div class="titles-section">
-                            <a href="#">Board</a>
-                            <a href="#">Backlog</a>
-                            <a href="#">Add Task</a>
-                            <a href="#">Help</a>
-                        </div>
-                    </div>
-                    <div class="personal-photo-container">
-                        <div class="personal-photo">
-                            <img class="rounded-circle" src="imgs/person.jpg" alt="">
-                        </div>
-                    </div>
+                <!-- sidebar Connection beginn -->
+                <div class="col-2 left-container" style="height: 100vh; background-color: #1E3190;"
+                    w3-include-html="sidebar.html">
                 </div>
-                <!-- Left Container Beginn -->
+                <!-- sidebar Connection End -->
 
                 <div class="col-10" style="height: 100vh;">
                     <div class="right-container">
