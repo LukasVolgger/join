@@ -1,0 +1,3 @@
+The following sentence must be in the footer:
+
+Logos come from, among others: <a href="https://icons8.com">https://icons8.com</a>
