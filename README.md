@@ -1,6 +1,11 @@
 ﻿# join
 
-<h2>TODO</h2>
+<h2>Tasklist</h2>
+
+<h3>Not assigned yet</h3>
+[ ] Implement Backend on Server 
+[ ] Imprint
+[ ] Responsive Webdesign
 
 <h3>Samir</h3>
 [ ] Board
