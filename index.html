@@ -28,7 +28,59 @@
         <!-- sidebar Connection End -->
 
         <main class="right-container border-spacing">
-            <h1>Title</h1>
+            <header>
+                <h1>Add Task</h1>
+                <span>Learning Management System Project</span>
+            </header>
+            <form action="" onsubmit="return false;" class="add-task-form">
+                <div class="add-task-form--left">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">TITLE</label>
+                        <input type="text" class="form-control input-field" id="exampleFormControlInput1" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">CATEGORY</label>
+                        <select class="form-select input-field" id="inputGroupSelect04" aria-label="CATEGORY">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">DESCRIPTION</label>
+                        <textarea class="form-control textarea-input" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="add-task-form--right">
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">DUE DATE</label>
+                        <input type="date" class="form-control input-field" id="exampleFormControlInput1" placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">URGENCY</label>
+                        <select class="form-select input-field" id="inputGroupSelect04" aria-label="URGENCY">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">ASSIGNED TO</label>
+                        <select class="form-select input-field" id="inputGroupSelect04" aria-label="ASSIGNED TO">
+                            <option selected>Choose...</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 form-controls">
+                        <button type="button" class="btn btn-light">CANCEL</button>
+                        <button type="button" class="btn btn-primary">CREATE TASK</button>
+                    </div>
+                </div>
+            </form>
         </main>
     </div>
 
