@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- google Fonts Beginn -->
+    <!-- Google Fonts Begin -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-    <!-- google Fonts End -->
-    <!-- bootstrap Beginn -->
+    <!-- Google Fonts End -->
+    <!-- Bootstrap Begin -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <!-- bootstrap End -->
+    <!-- Bootstrap End -->
     <link rel="stylesheet" href="./styles/mainStyle.css">
     <link rel="stylesheet" href="./styles/sidebar.css">
     <script src="./scripts/index.js"></script>
@@ -21,22 +21,21 @@
 </head>
 
 <body onload="init()">
-    <!-- Content here -->
     <div class="wrapper">
-        <!-- sidebar Connection beginn -->
+        <!-- Sidebar Begin -->
         <div w3-include-html="./sidebar.html"></div>
-        <!-- sidebar Connection End -->
+        <!-- Sidebar End -->
 
         <main class="right-container border-spacing">
             <header>
                 <h1>Add Task</h1>
                 <span>Learning Management System Project</span>
             </header>
-            <form action="" onsubmit="return false;" class="add-task-form">
+            <form action="" onsubmit="addTask(); return false;" class="add-task-form">
                 <div class="add-task-form--left">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">TITLE</label>
-                        <input type="text" class="form-control input-field" id="exampleFormControlInput1" placeholder="">
+                        <input type="text" class="form-control input-field" id="exampleFormControlInput1">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">CATEGORY</label>
@@ -55,7 +54,7 @@
                 <div class="add-task-form--right">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">DUE DATE</label>
-                        <input type="date" class="form-control input-field" id="exampleFormControlInput1" placeholder="name@example.com">
+                        <input type="date" class="form-control input-field" id="exampleFormControlInput1">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">URGENCY</label>
@@ -76,14 +75,13 @@
                         </select>
                     </div>
                     <div class="mb-3 form-controls">
-                        <button type="button" class="btn btn-light">CANCEL</button>
-                        <button type="button" class="btn btn-primary">CREATE TASK</button>
+                        <button type="reset" class="btn btn-light">CANCEL</button>
+                        <button type="submit" class="btn btn-primary">CREATE TASK</button>
                     </div>
                 </div>
             </form>
         </main>
     </div>
-
 </body>
 
 </html>
