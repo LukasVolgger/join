@@ -5,6 +5,8 @@
 // Stores all task objects
 let tasks = [];
 
+setURL('http://gruppe-211.developerakademie.net/smallest_backend_ever');
+
 // ####################################### MAIN FUNCTIONS #######################################
 
 function init() {
