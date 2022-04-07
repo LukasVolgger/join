@@ -4,7 +4,8 @@
 
 <h3>Not assigned yet</h3>
 
-- [ ] Implement Backend on Server 
+- [ ] Sidebar script
+- [ ] Help
 - [ ] Imprint
 - [ ] Responsive Webdesign
 
@@ -18,5 +19,9 @@
 
 <h3>Lukas</h3>
 
+- [X] Implement Backend on Server 
 - [ ] AddTask
 
+<h3>Optional</h3>
+
+- [ ] User login

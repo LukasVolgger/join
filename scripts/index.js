@@ -9,8 +9,10 @@ setURL('http://gruppe-211.developerakademie.net/smallest_backend_ever');
 
 // ####################################### MAIN FUNCTIONS #######################################
 
-function init() {
+async function init() {
     includeHTML();
+    await downloadFromServer();
+    await loadFromBackend();
 }
 
 /**
@@ -35,8 +37,9 @@ function addTask() {
     };
 
     console.log(task);
-
     tasks.push(task);
+
+    saveToBackend();
 
     // Reset input fields
     title.value = '';
@@ -45,4 +48,21 @@ function addTask() {
     dueDate.value = '';
     urgency.value = '';
     assignedTo.value = '';
+}
+
+/**
+ * This function converts the global arrays into strings and saves them on the backend
+ */
+function saveToBackend() {
+    let tasksAsJSON = JSON.stringify(tasks);
+    backend.setItem('tasks', tasksAsJSON);
+}
+
+
+/**
+ * This function loads the saved strings from the backend. The strings are converted again and assigned to the arrays
+ */
+function loadFromBackend() {
+    let tasksAsJSON = backend.getItem('tasks');
+    tasks = JSON.parse(tasksAsJSON) || [];
 }

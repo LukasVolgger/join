@@ -15,9 +15,9 @@
     <!-- Bootstrap End -->
     <link rel="stylesheet" href="./styles/mainStyle.css">
     <link rel="stylesheet" href="./styles/sidebar.css">
+    <script src="./scripts/mini_backend.js"></script>
     <script src="./scripts/index.js"></script>
     <script src="./scripts/include.js"></script>
-    <script src="./scripts/mini_backend.js"></script>
     <title>Join</title>
 </head>
 
@@ -28,6 +28,7 @@
         <!-- Sidebar End -->
 
         <main class="right-container border-spacing">
+            <!-- Unique content START -->
             <header>
                 <h1>Add Task</h1>
                 <span>Learning Management System Project</span>
@@ -42,9 +43,9 @@
                         <label for="exampleFormControlInput1" class="form-label">CATEGORY</label>
                         <select class="form-select input-field" id="task-category" aria-label="CATEGORY" required>
                             <option selected value="">...</option>
-                            <option value="1">Category 1</option>
-                            <option value="2">Category 2</option>
-                            <option value="3">Category 3</option>
+                            <option value="category_1">Category 1</option>
+                            <option value="category_2">Category 2</option>
+                            <option value="category_3">Category 3</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -61,18 +62,18 @@
                         <label for="exampleFormControlInput1" class="form-label">URGENCY</label>
                         <select class="form-select input-field" id="task-urgency" aria-label="URGENCY" required>
                             <option selected value="">...</option>
-                            <option value="1">Low</option>
-                            <option value="2">Medium</option>
-                            <option value="3">High</option>
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">ASSIGNED TO</label>
                         <select class="form-select input-field" id="task-assigned-to" aria-label="ASSIGNED TO" required>
                             <option selected value="">...</option>
-                            <option value="1">Samir BARBAT</option>
-                            <option value="2">Samuel Bergen</option>
-                            <option value="3">Lukas VOLGGER</option>
+                            <option value="samir_barbat">Samir BARBAT</option>
+                            <option value="samuel_bergen">Samuel Bergen</option>
+                            <option value="lukas_volgger">Lukas VOLGGER</option>
                         </select>
                     </div>
                     <div class="mb-3 form-controls">
@@ -81,6 +82,7 @@
                     </div>
                 </div>
             </form>
+            <!-- Unique content END -->
         </main>
     </div>
 </body>
