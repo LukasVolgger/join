@@ -35,43 +35,43 @@
                 <div class="add-task-form--left">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">TITLE</label>
-                        <input type="text" class="form-control input-field" id="exampleFormControlInput1">
+                        <input type="text" class="form-control input-field" id="task-title" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">CATEGORY</label>
-                        <select class="form-select input-field" id="inputGroupSelect04" aria-label="CATEGORY">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select input-field" id="task-category" aria-label="CATEGORY" required>
+                            <option selected value="">...</option>
+                            <option value="1">Category 1</option>
+                            <option value="2">Category 2</option>
+                            <option value="3">Category 3</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">DESCRIPTION</label>
-                        <textarea class="form-control textarea-input" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control textarea-input" id="task-description" rows="3" required></textarea>
                     </div>
                 </div>
                 <div class="add-task-form--right">
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">DUE DATE</label>
-                        <input type="date" class="form-control input-field" id="exampleFormControlInput1">
+                        <input type="date" class="form-control input-field" id="task-due-date" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">URGENCY</label>
-                        <select class="form-select input-field" id="inputGroupSelect04" aria-label="URGENCY">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select input-field" id="task-urgency" aria-label="URGENCY" required>
+                            <option selected value="">...</option>
+                            <option value="1">Low</option>
+                            <option value="2">Medium</option>
+                            <option value="3">High</option>
                         </select>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">ASSIGNED TO</label>
-                        <select class="form-select input-field" id="inputGroupSelect04" aria-label="ASSIGNED TO">
-                            <option selected>Choose...</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select class="form-select input-field" id="task-assigned-to" aria-label="ASSIGNED TO" required>
+                            <option selected value="">...</option>
+                            <option value="1">Samir BARBAT</option>
+                            <option value="2">Samuel Bergen</option>
+                            <option value="3">Lukas VOLGGER</option>
                         </select>
                     </div>
                     <div class="mb-3 form-controls">

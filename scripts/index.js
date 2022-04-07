@@ -3,7 +3,7 @@
 // ####################################### GLOBAL SCOPE #######################################
 
 // Stores all task objects
-tasks = [];
+let tasks = [];
 
 // ####################################### MAIN FUNCTIONS #######################################
 
@@ -15,13 +15,32 @@ function init() {
  * Gets the user input and creates an object 
  */
 function addTask() {
-    // Basic object structure
-    // let task = {
-    //     'title': '',
-    //     'category': '',
-    //     'description': '',
-    //     'due_date': '',
-    //     'urgency': '',
-    //     'assigned_to': ''
-    // };
+    let title = document.getElementById('task-title');
+    let category = document.getElementById('task-category');
+    let description = document.getElementById('task-description');
+    let dueDate = document.getElementById('task-due-date');
+    let urgency = document.getElementById('task-urgency');
+    let assignedTo = document.getElementById('task-assigned-to');
+
+    let task = {
+        'title': `${title.value}`,
+        'category': `${category.value}`,
+        'description': `${description.value}`,
+        'due_date': `${dueDate.value}`,
+        'urgency': `${urgency.value}`,
+        'assigned_to': `${assignedTo.value}`,
+        'creation_date': new Date().getTime()
+    };
+
+    console.log(task);
+
+    tasks.push(task);
+
+    // Reset input fields
+    title.value = '';
+    category.value = '';
+    description.value = '';
+    dueDate.value = '';
+    urgency.value = '';
+    assignedTo.value = '';
 }
