@@ -1,0 +1,63 @@
+a {
+    text-decoration: none;
+}
+
+.backlog-container {
+    margin-top: 32px;
+}
+
+.backlog-headline {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.backlog-item {
+    border-left: solid 12px;
+    margin: 16px 0;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: rgba(211, 211, 211, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.backlog-item:hover {
+    background-color: rgb(211, 211, 211);
+}
+
+.backlog-item > * {
+    margin: 0 20px;
+}
+
+.person {
+    display: flex;
+    align-items: center;
+}
+
+.person-name {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-picture {
+    height: 48px;
+    width: 48px;
+    object-fit: cover;
+    margin-right: 8px;
+}
+
+.color-category-1 {
+    border-left-color: orange;
+}
+
+.color-category-2 {
+    border-left-color: blue;
+}
+
+.color-category-3 {
+    border-left-color: green;
+}
