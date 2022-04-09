@@ -1,0 +1,22 @@
+.border-container {
+    width: 100%;
+    display: flex;
+
+}
+
+
+.border-col {
+    width: 20%;
+    margin: 0 20px;
+    height: 80vh;
+}
+
+.border-title {
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+}
+
+.border-content {
+    background-color: lightgray;
+    height: 100%;
+}
