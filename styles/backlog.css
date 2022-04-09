@@ -21,7 +21,6 @@ a {
     background-color: rgba(211, 211, 211, 0.7);
     display: flex;
     align-items: center;
-    justify-content: space-between;
     cursor: pointer;
 }
 
@@ -50,14 +49,14 @@ a {
     margin-right: 8px;
 }
 
-.color-category-1 {
+.category_1 {
     border-left-color: orange;
 }
 
-.color-category-2 {
+.category_2 {
     border-left-color: blue;
 }
 
-.color-category-3 {
+.category_3 {
     border-left-color: green;
 }
