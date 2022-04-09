@@ -2,12 +2,13 @@
     width: 100%;
     display: flex;
 
+
 }
 
 
 .border-col {
-    width: 20%;
-    margin: 0 20px;
+    width: 25%;
+    margin: 0 15px;
     height: 80vh;
 }
 
