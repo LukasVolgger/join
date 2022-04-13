@@ -2,27 +2,13 @@
 
 // ####################################### GLOBAL SCOPE #######################################
 
-// Stores all task objects
-let tasks = [];
-setURL('http://gruppe-211.developerakademie.net/smallest_backend_ever');
-
-let task = [{
-    'assigned_to': "samuel_bergen",
-    'category': "category_2",
-    'creation_date': 1649493181425,
-    'description': "User-Login erstellen mit Nutzername und Passwort\nUser anlegen",
-    'due_date': "2022-04-11",
-    'title': "User-Login machen",
-    'urgency': "high"
-}];
-
-
 // ####################################### MAIN FUNCTIONS #######################################
 
 async function init() {
     includeHTML();
     await downloadFromServer();
     await loadFromBackend();
+    renderNavElements();
     showBacklog();
 }
 
