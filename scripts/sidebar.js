@@ -1,14 +1,12 @@
 'use strict';
 
 let navElements = [
-    '<a href="#" id="nav-element-0" onclick="selectNavElement(0)">Board</a>',
-    '<a href="#" id="nav-element-1" onclick="selectNavElement(1)">Backlog</a>',
-    '<a href="#" id="nav-element-2" onclick="selectNavElement(2)">Add Task</a>',
-    '<a href="#" id="nav-element-3" onclick="selectNavElement(3)">Help</a>',
-    '<a href="#" id="nav-element-4" onclick="selectNavElement(4)">About</a>'
+    '<a href="./board.html" id="nav-element-board">Board</a>',
+    '<a href="./backlog.html" id="nav-element-backlog">Backlog</a>',
+    '<a href="./index.html" id="nav-element-index">Add Task</a>',
+    '<a href="./help.html" id="nav-element-help">Help</a>',
+    '<a href="./about.html" id="nav-element-about">About</a>'
 ]
-let currentNavELement;
-
 
 /**
  * Renders all nav-elements from array
@@ -24,15 +22,36 @@ function renderNavElements() {
 
 /**
  * This function is used to highlight the selected nav-element
- * @param {integer} element 
  */
-function selectNavElement(element) {
-    document.getElementById(`nav-element-${element}`).classList.add('selected-nav-element');
+function selectNavElement() {
 
-    // De-select other nav elements
-    for (let i = 0; i < navElements.length; i++) {
-        if (element != i) {
-            document.getElementById(`nav-element-${i}`).classList.remove('selected-nav-element');
-        }
+    let url = window.location.href;
+    let htmlSite = url.substr(url.lastIndexOf('/') + 1);
+    // console.log(htmlSite);
+
+    switch (htmlSite) {
+        case 'board.html':
+            document.getElementById('nav-element-board').classList.add('selected-nav-element');
+            break;
+
+        case 'backlog.html':
+            document.getElementById('nav-element-backlog').classList.add('selected-nav-element');
+            break;
+
+        case 'index.html':
+            document.getElementById('nav-element-index').classList.add('selected-nav-element');
+            break;
+
+        case 'index.html#':
+            document.getElementById('nav-element-index').classList.add('selected-nav-element');
+            break;
+
+        case 'help.html':
+            document.getElementById('nav-element-help').classList.add('selected-nav-element');
+            break;
+
+        case 'about.html':
+            document.getElementById('nav-element-about').classList.add('selected-nav-element');
+            break;
     }
 }

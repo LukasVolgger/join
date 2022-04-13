@@ -1,10 +1,7 @@
 .border-container {
     width: 100%;
     display: flex;
-
-
 }
-
 
 .border-col {
     width: 25%;
@@ -14,7 +11,12 @@
 
 .border-title {
     text-align: center;
-    font-family: 'PT Sans', sans-serif;
+    /* Ist bereits in der mainStyle.css definiert */
+    /* font-family: 'PT Sans', sans-serif; */
+}
+
+.border-title h4 {
+    font-weight: 600;
 }
 
 .border-content {

@@ -9,6 +9,7 @@ async function init() {
     await downloadFromServer();
     await loadFromBackend();
     renderNavElements();
+    selectNavElement();
     showBacklog();
 }
 

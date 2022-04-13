@@ -14,7 +14,7 @@ async function init() {
     await downloadFromServer();
     await loadFromBackend();
     renderNavElements();
-    selectNavElement(2); // Program starts with 'index.html'
+    selectNavElement();
 }
 
 /**
