@@ -24,6 +24,14 @@ body {
     width: 100%;
 }
 
+header h1 {
+    font-weight: 600;
+}
+
+.title-description {
+    color: #1E3190;
+}
+
 .add-task-form {
     display: flex;
     background-color: #F4F3FB;
@@ -42,8 +50,36 @@ body {
     width: 50%;
 }
 
+.form-label {
+    font-weight: 600;
+    font-size: 20px;
+    color: #1E3190;
+}
+
 .form-control {
     resize: none;
+}
+
+.cancel-btn {
+    color: #1E3190;
+    font-weight: 600;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.cancel-btn:hover {
+    background-color: transparent;
+    border-color: transparent;
+    color: #1E3190;
+}
+
+.submit-btn {
+    background-color: #1E3190;
+    border-color: #1E3190;
+}
+
+.submit-btn:hover {
+    background-color: #465396;
 }
 
 .input-field {

@@ -5,7 +5,6 @@
 <h3>Not assigned yet</h3>
 
 - [ ] Help
-- [ ] About
 - [ ] Responsive Webdesign
 
 <h3>Samir</h3>
@@ -20,7 +19,8 @@
 
 - [X] Implement Backend on Server
 - [X] Sidebar script
-- [ ] AddTask
+- [X] AddTask
+- [ ] About
 
 <h3>Optional</h3>
 
