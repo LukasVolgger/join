@@ -13,7 +13,6 @@ async function init() {
     includeHTML();
     await downloadFromServer();
     await loadFromBackend();
-    renderNavElements();
     selectNavElement();
 }
 

@@ -1,25 +1,5 @@
 'use strict';
 
-let navElements = [
-    '<a href="./board.html" id="nav-element-board">Board</a>',
-    '<a href="./backlog.html" id="nav-element-backlog">Backlog</a>',
-    '<a href="./index.html" id="nav-element-index">Add Task</a>',
-    '<a href="./help.html" id="nav-element-help">Help</a>',
-    '<a href="./about.html" id="nav-element-about">About</a>'
-]
-
-/**
- * Renders all nav-elements from array
- */
-function renderNavElements() {
-    let container = document.getElementById('nav-elements');
-    container.innerHTML = '';
-
-    for (let i = 0; i < navElements.length; i++) {
-        container.innerHTML += navElements[i];
-    }
-}
-
 /**
  * This function is used to highlight the selected nav-element
  */
