@@ -20,7 +20,7 @@
 - [X] Implement Backend on Server
 - [X] Sidebar script
 - [X] AddTask
-- [ ] About
+- [X] About
 
 <h3>Optional</h3>
 
