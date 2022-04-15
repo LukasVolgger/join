@@ -21,7 +21,6 @@
 - [X] Sidebar script
 - [X] AddTask
 - [X] About
+- [ ] User login
 
 <h3>Optional</h3>
-
-- [ ] User login
