@@ -16,10 +16,12 @@
     <!-- Bootstrap End -->
     <link rel="stylesheet" href="./styles/login.css">
     <script src="./scripts/mini_backend.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/index.js"></script>
     <script src="./scripts/login.js"></script>
 </head>
 
-<body>
+<body onload="initLogin()">
     <div class="login-section">
         <img src="./imgs/logo.png" alt="Join Logo">
         <form action="" onsubmit="loginOrCreateAccount(); return false;" class="login-form">
@@ -33,7 +35,7 @@
             </div>
             <div class="input-group mb-3">
                 <div class="checkbox-input">
-                    <input class="form-check-input mt-0" type="checkbox" value="1" aria-label="Create new account">
+                    <input id="create-account-checkbox" class="form-check-input mt-0" type="checkbox" value="1" aria-label="Create new account">
                 </div>
                 <span>Create new account</span>
             </div>

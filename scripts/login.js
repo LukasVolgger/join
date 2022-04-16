@@ -1,5 +1,12 @@
 'use strict';
 
+// ####################################### MAIN FUNCTIONS #######################################
+
+async function initLogin() {
+    await downloadFromServer();
+    await loadFromBackend();
+}
+
 // https://stackoverflow.com/questions/18279141/javascript-string-encryption-and-decryption
 const crypt = (salt, text) => {
     const textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
@@ -28,9 +35,54 @@ const decrypt = (salt, encoded) => {
 function loginOrCreateAccount() {
     let username = document.getElementById('username').value;
     let password = document.getElementById('password').value;
+    let createAccount = document.getElementById('create-account-checkbox').checked;
 
+    // Encrypt user input
+    const encrypted_username = crypt("salt", username);
     const encrypted_password = crypt("salt", password);
 
-    console.log(username);
-    console.log(encrypted_password);
+    console.log('Create new account: ' + createAccount);
+    console.log('Encrypted username: ' + encrypted_username);
+    console.log('Encrypted password: ' + encrypted_password);
+
+    let user = {
+        'username': encrypted_username,
+        'password': encrypted_password,
+        'creation_date': new Date().getTime()
+    }
+
+    // Either create new user Account if checkbox is checked or login existing user
+    if (username && password && createAccount) {
+        createUserAccount(user);
+        console.log('run => createUserAccount()');
+    } else {
+        // loginUserAccount(user);
+        console.log('run => loginUserAccount()');
+    }
+}
+
+function createUserAccount(user) {
+    let userAlreadyExists;
+
+    for (let i = 0; i < users.length; i++) {
+        const currentUser = users[i].username;
+
+        if (currentUser == user.username) {
+            userAlreadyExists = true;
+        } else {
+            userAlreadyExists = false;
+        }
+    }
+
+    if (userAlreadyExists) {
+        console.log('User already exists!');
+    } else {
+        console.log('User is free!');
+        users.push(user);
+        saveToBackend();
+    }
+}
+
+function loginAccount(encrypted_username, encrypted_password) {
+
 }
