@@ -45,8 +45,19 @@ function createBacklogItem() {
  * This function allows you to edit a backlog-item after create
  */
 function editTask(i) {
-
+    document.getElementById('dialog-bg').classList.remove('d-none');
+    let content = document.getElementById('dialog-content');
+    
 }
+
+
+/**
+ * This function close a Dialog-Window with display: none
+ */
+function closeDialog() {
+    document.getElementById('dialog-bg').classList.add('d-none');
+}
+
 
 /**
  * This function generate HTML-Code for one Backlog-Item
@@ -72,6 +83,6 @@ function templateBacklogItem(i, task) {
  */
 function templateEditTask(i, task) {
     return `
-    
+
     `;
 }

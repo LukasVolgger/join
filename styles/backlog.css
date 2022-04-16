@@ -60,3 +60,22 @@ a {
 .category_3 {
     border-left-color: green;
 }
+
+.dialog-bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog {
+    background-color: white;
+    height: 400px;
+    width: 600px;
+}
