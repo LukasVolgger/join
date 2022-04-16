@@ -51,13 +51,13 @@ function loginOrCreateAccount() {
         'creation_date': new Date().getTime()
     }
 
-    // Either create new user Account if checkbox is checked or login existing user
+    // Either create new user account if the checkbox is checked or login as existing user
     if (username && password && createAccount) {
-        createUserAccount(user);
         console.log('run => createUserAccount()');
+        createUserAccount(user);
     } else {
-        // loginUserAccount(user);
         console.log('run => loginUserAccount()');
+        loginUserAccount(user);
     }
 }
 
@@ -65,9 +65,7 @@ function createUserAccount(user) {
     let userAlreadyExists;
 
     for (let i = 0; i < users.length; i++) {
-        const currentUser = users[i].username;
-
-        if (currentUser == user.username) {
+        if (user.username == users[i].username) {
             userAlreadyExists = true;
         } else {
             userAlreadyExists = false;
@@ -83,6 +81,17 @@ function createUserAccount(user) {
     }
 }
 
-function loginAccount(encrypted_username, encrypted_password) {
+function loginUserAccount(user) {
+    for (let i = 0; i < users.length; i++) {
+        let correctLoginInformation = user.username == users[i].username && user.password == users[i].password;
 
+        if (correctLoginInformation) {
+            console.log('Login successful!');
+
+            // Exit for loop when successfully signed in
+            break;
+        } else {
+            console.log('Incorrect username or password!');
+        }
+    }
 }
