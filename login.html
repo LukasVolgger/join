@@ -22,9 +22,9 @@
 </head>
 
 <body onload="initLogin()">
-    <div class="login-section">
+    <div id="login-section" class="login-section">
         <img src="./imgs/logo.png" alt="Join Logo">
-        <form action="" onsubmit="loginOrCreateAccount(); return false;" class="login-form">
+        <form action="" onsubmit="loginOrCreateAccount(); return false;" id="login-form" class="login-form">
             <div class="mb-3">
                 <label for="Username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="username" placeholder="Username" minlength="3" required>
@@ -40,6 +40,7 @@
                 <span>Create new account</span>
             </div>
             <button type="submit" class="btn btn-primary">Send</button>
+            <div id="login-messages" class="login-messages"></div>
         </form>
     </div>
     <a class="contact-link" href="mailto: webmaster@example.de">You need help? Contact the webmasters here!</a>

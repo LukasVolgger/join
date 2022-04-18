@@ -86,12 +86,63 @@ function loginUserAccount(user) {
         let correctLoginInformation = user.username == users[i].username && user.password == users[i].password;
 
         if (correctLoginInformation) {
-            console.log('Login successful!');
-
-            // Exit for loop when successfully signed in
+            loginSuccessful();
             break;
         } else {
-            console.log('Incorrect username or password!');
+            loginNotSuccessful(user);
+            break;
         }
     }
+}
+
+function loginSuccessful() {
+    let loginContainer = document.getElementById('login-form');
+
+    console.log('Login successful!');
+    loginContainer.innerHTML = loginSuccessfulMessage();
+}
+
+function loginNotSuccessful(user) {
+    let messagesContainer = document.getElementById('login-messages');
+    messagesContainer.innerHTML = '';
+
+    for (let i = 0; i < users.length; i++) {
+        if (user.username == users[i].username) {
+            console.log('Incorrect password!');
+            messagesContainer.innerHTML += loginErrorMessage('Incorrect password!');
+
+            document.getElementById('password').value = '';
+
+            break;
+        } else {
+            console.log('This user does not exist!');
+            messagesContainer.innerHTML += loginErrorMessage('This user does not exist!');
+
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+
+            break;
+        }
+    }
+}
+
+function loginSuccessfulMessage() {
+    return `
+        <div class="alert alert-success" role="alert">
+            Login successful!
+        </div>
+        <button type="button" class="btn btn-primary" onclick="redirect()">Continue</button>
+    `;
+}
+
+function loginErrorMessage(string) {
+    return `
+        <div id="invalid-login" class="alert alert-danger" role="alert">
+            ${string}
+        </div>
+    `;
+}
+
+function redirect() {
+    window.location.href = './html/index.html';
 }

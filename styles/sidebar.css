@@ -43,15 +43,17 @@ aside {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.personal-photo-container {
-    width: 100%;
-    height: 90px;
+.user-account-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 16px;
+    width: 100%;
+    height: 90px;
 }
 
-.personal-photo {
+.user-profile-picture {
     width: 100%;
     height: 100px;
     display: flex;
@@ -59,7 +61,7 @@ aside {
     align-items: center;
 }
 
-.personal-photo-container img {
+.user-profile-picture img {
     width: 64px;
     height: 64px;
     object-fit: cover;

@@ -47,7 +47,7 @@ function createBacklogItem() {
 function editTask(i) {
     document.getElementById('dialog-bg').classList.remove('d-none');
     let content = document.getElementById('dialog-content');
-    
+
 }
 
 
@@ -66,7 +66,7 @@ function templateBacklogItem(i, task) {
     return `
         <div class="backlog-item ${task.category}" id="backlog-item-${i}" onclick="editTask(${i})">
             <div class="person">
-                <img class="rounded-circle profile-picture" src="imgs/pp_${task.assigned_to}.jfif" alt="">
+                <img class="rounded-circle profile-picture" src="../imgs/pp_${task.assigned_to}.jfif" alt="">
                 <div class="person-name">
                     <span>${task.assigned_to}</span>
                     <a href="mailto:${task.assigned_to}@join.com">${task.assigned_to}@join.com</a>
