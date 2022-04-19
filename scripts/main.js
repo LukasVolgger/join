@@ -10,6 +10,9 @@ setURL('http://gruppe-211.developerakademie.net/smallest_backend_ever');
 
 // ####################################### MAIN FUNCTIONS #######################################
 
+/**
+ * Initialize needed functions
+ */
 async function init() {
     includeHTML();
     await downloadFromServer();
@@ -19,7 +22,7 @@ async function init() {
 
 
 /**
- * This function converts the global arrays into strings and saves them on the backend
+ * Converts the global arrays into strings and saves them on the backend
  */
 function saveToBackend() {
     let usersAsJSON = JSON.stringify(users);
@@ -30,7 +33,7 @@ function saveToBackend() {
 
 
 /**
- * This function loads the saved strings from the backend. The strings are converted again and assigned to the arrays
+ * Loads the saved strings from the backend. The strings are converted again and assigned to the arrays
  */
 function loadFromBackend() {
     let usersAsJSON = backend.getItem('users');
