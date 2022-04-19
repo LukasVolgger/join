@@ -99,6 +99,7 @@ function loginSuccessful() {
     let loginContainer = document.getElementById('login-form');
 
     console.log('Login successful!');
+    document.getElementById('login-messages').classList.remove('d-none');
     loginContainer.innerHTML = loginSuccessfulMessage();
 }
 
@@ -109,6 +110,7 @@ function loginNotSuccessful(user) {
     for (let i = 0; i < users.length; i++) {
         if (user.username == users[i].username) {
             console.log('Incorrect password!');
+            document.getElementById('login-messages').classList.remove('d-none');
             messagesContainer.innerHTML += loginErrorMessage('Incorrect password!');
 
             document.getElementById('password').value = '';
@@ -116,6 +118,7 @@ function loginNotSuccessful(user) {
             break;
         } else {
             console.log('This user does not exist!');
+            document.getElementById('login-messages').classList.remove('d-none');
             messagesContainer.innerHTML += loginErrorMessage('This user does not exist!');
 
             document.getElementById('username').value = '';
