@@ -1,15 +1,14 @@
 'use strict';
 
 /**
- * This function is used to highlight the selected nav-element
+ * Highlights the navigation elements from <aside> by URL
  */
 function selectNavElement() {
-
     let url = window.location.href;
-    let htmlSite = url.substr(url.lastIndexOf('/') + 1);
+    let htmlPage = url.substr(url.lastIndexOf('/') + 1);
     // console.log(htmlSite);
 
-    switch (htmlSite) {
+    switch (htmlPage) {
         case 'board.html':
             document.getElementById('nav-element-board').classList.add('selected-nav-element');
             break;
@@ -34,4 +33,11 @@ function selectNavElement() {
             document.getElementById('nav-element-about').classList.add('selected-nav-element');
             break;
     }
+}
+
+/**
+ * Redirects the user to the login.html page
+ */
+function logout() {
+    window.location.href = '../login.html';
 }

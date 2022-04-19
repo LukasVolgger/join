@@ -3,16 +3,16 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #536ffb;
+    background-color: #e6eaff;
 }
 
 .login-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px;
+    padding: 32px;
     border-radius: 16px;
-    gap: 16px;
+    gap: 32px;
     background-color: #1E3190;
     color: white;
 }
@@ -27,23 +27,48 @@ body {
     width: 25vw;
 }
 
+.form-label {
+    color: white;
+    font-weight: 100;
+    font-size: unset;
+}
+
+.form-control:focus {
+    border-color: rgb(210, 194, 253);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(210, 194, 253, 0.8);
+}
+
+.form-check-input:focus {
+    border-color: rgb(210, 194, 253);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(210, 194, 253, 0.8);
+}
+
 .checkbox-input {
     display: flex;
     align-items: center;
     margin-right: 8px;
 }
 
+.login-messages {
+    margin-top: 32px;
+}
+
+.alert {
+    text-align: center;
+}
+
 .contact-link {
     position: absolute;
     right: 16px;
     bottom: 16px;
-    color: white;
+    color: #1E3190;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: all 225ms ease-in-out;
 }
 
-.contact-link:hover {
-    color: white;
-    border-bottom: 2px solid white;
+.contact-link img {
+    width: 48px;
+}
+
+.contact-link img:hover {
+    filter: invert(57%) sepia(89%) saturate(4716%) hue-rotate(2deg) brightness(96%) contrast(99%);
 }

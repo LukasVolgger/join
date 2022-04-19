@@ -5,6 +5,8 @@
 <h3>Not assigned yet</h3>
 
 - [ ] Help
+- [ ] Js Doc
+- [ ] Refactoring
 - [ ] Responsive Webdesign
 
 <h3>Samir</h3>
@@ -21,6 +23,4 @@
 - [X] Sidebar script
 - [X] AddTask
 - [X] About
-- [ ] User login
-
-<h3>Optional</h3>
+- [X] User login
