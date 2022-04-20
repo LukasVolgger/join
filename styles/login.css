@@ -3,7 +3,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e6eaff;
+    background-image: url(../imgs/digitization.jpg);
+    background-size: cover;
 }
 
 .login-section {
@@ -13,7 +14,7 @@ body {
     padding: 32px;
     border-radius: 16px;
     gap: 32px;
-    background-color: #1E3190;
+    background-color: rgb(30 49 144 / 90%);
     color: white;
 }
 
