@@ -75,7 +75,10 @@ function loginOrCreateAccount() {
     // Either create new user account if the checkbox is checked or login as existing user
     if (username && password && createAccount) {
         console.log('run => createUserAccount()');
-        createUserAccount(user);
+        // Confirm account creation
+        if (window.confirm('Are you sure that you wan\'t to create this account?')) {
+            createUserAccount(user);
+        }
     } else {
         console.log('run => loginUserAccount()');
         loginUserAccount(user);
@@ -99,10 +102,12 @@ function createUserAccount(user) {
 
     if (userAlreadyExists) {
         console.log('User already exists!');
+        loginErrorMessage('This user already exists!');
     } else {
         console.log('User is free!');
         users.push(user);
         saveToBackend();
+        accountSuccessfullyCreated();
     }
 }
 
@@ -111,27 +116,47 @@ function createUserAccount(user) {
  * @param {Object} user // The encrypted user data 
  */
 function loginUserAccount(user) {
-    for (let i = 0; i < users.length; i++) {
-        let correctLoginInformation = user.username == users[i].username && user.password == users[i].password;
+    // First check if there are any users. If none have been created yet, display an error message
+    if (users.length < 1) {
+        console.log('This user does not exist!');
+        loginErrorMessage('This user does not exist!');
 
-        if (correctLoginInformation) {
-            loginSuccessful();
-            break;
-        } else {
-            loginNotSuccessful(user);
-            break;
+        document.getElementById('password').value = '';
+    }
+
+    let correctLoginInformation;
+
+    for (let i = 0; i < users.length; i++) {
+        if (user.username == users[i].username && user.password == users[i].password) {
+            correctLoginInformation = true;
         }
     }
+
+    if (correctLoginInformation) {
+        loginSuccessful();
+    } else {
+        loginNotSuccessful(user);
+    }
+
+}
+
+/**
+ * Shows the user a message when the account was created successfully
+ */
+function accountSuccessfullyCreated() {
+    let loginContainer = document.getElementById('login-form');
+    console.log('Account successfully created!');
+    document.getElementById('login-messages').classList.remove('d-none');
+    loginContainer.innerHTML = accountSuccessfullyCreatedMessage();
 }
 
 /**
  * Shows the user a message that the login was successful
  */
 function loginSuccessful() {
-    let loginContainer = document.getElementById('login-form');
     console.log('Login successful!');
     document.getElementById('login-messages').classList.remove('d-none');
-    loginContainer.innerHTML = loginSuccessfulMessage();
+    loginSuccessfulMessage();
 }
 
 /**
@@ -141,15 +166,11 @@ function loginSuccessful() {
  * @param {Object} user // The encrypted user data 
  */
 function loginNotSuccessful(user) {
-    let messagesContainer = document.getElementById('login-messages');
-    messagesContainer.innerHTML = '';
-
     for (let i = 0; i < users.length; i++) {
         // Username exists - Password was entered incorrectly
         if (user.username == users[i].username) {
             console.log('Incorrect password!');
-            document.getElementById('login-messages').classList.remove('d-none');
-            messagesContainer.innerHTML += loginErrorMessage('Incorrect password!');
+            loginErrorMessage('Incorrect password!');
 
             document.getElementById('password').value = '';
 
@@ -158,9 +179,8 @@ function loginNotSuccessful(user) {
         } else {
             console.log('This user does not exist!');
             document.getElementById('login-messages').classList.remove('d-none');
-            messagesContainer.innerHTML += loginErrorMessage('This user does not exist!');
+            loginErrorMessage('This user does not exist!');
 
-            document.getElementById('username').value = '';
             document.getElementById('password').value = '';
 
             break;
@@ -169,11 +189,25 @@ function loginNotSuccessful(user) {
 }
 
 /**
+ * HTML template for the successful creation of a user account
+ * @returns // Return the HTML snippet
+ */
+function accountSuccessfullyCreatedMessage() {
+    return `
+        <div class="alert alert-success" role="alert">
+            Account successfully created!
+        </div>
+        <button type="button" class="btn btn-primary" onclick="location.reload();">Back to login</button>
+    `;
+}
+
+/**
  * HTML template for the successful login
  * @returns // Return the HTML snippet
  */
 function loginSuccessfulMessage() {
-    return `
+    let loginContainer = document.getElementById('login-form');
+    loginContainer.innerHTML = `
         <div class="alert alert-success" role="alert">
             Login successful!
         </div>
@@ -187,7 +221,11 @@ function loginSuccessfulMessage() {
  * @returns // // Return the HTML snippet
  */
 function loginErrorMessage(string) {
-    return `
+    document.getElementById('login-messages').classList.remove('d-none');
+    let messagesContainer = document.getElementById('login-messages');
+    messagesContainer.innerHTML = '';
+
+    messagesContainer.innerHTML = `
         <div id="invalid-login" class="alert alert-danger" role="alert">
             ${string}
         </div>
