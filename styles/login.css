@@ -3,7 +3,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #e6eaff;
+    background-image: url(../imgs/digitization.jpg);
+    background-size: cover;
 }
 
 .login-section {
@@ -13,7 +14,7 @@ body {
     padding: 32px;
     border-radius: 16px;
     gap: 32px;
-    background-color: #1E3190;
+    background-color: rgb(30 49 144 / 90%);
     color: white;
 }
 
@@ -25,6 +26,22 @@ body {
     display: flex;
     flex-direction: column;
     width: 25vw;
+}
+
+.form-label {
+    color: white;
+    font-weight: 100;
+    font-size: unset;
+}
+
+.form-control:focus {
+    border-color: rgb(210, 194, 253);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(210, 194, 253, 0.8);
+}
+
+.form-check-input:focus {
+    border-color: rgb(210, 194, 253);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(210, 194, 253, 0.8);
 }
 
 .checkbox-input {
@@ -47,11 +64,42 @@ body {
     bottom: 16px;
     color: #1E3190;
     text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: all 225ms ease-in-out;
 }
 
-.contact-link:hover {
-    color: #1E3190;
-    border-bottom: 2px solid #1E3190;
+.contact-link img {
+    width: 48px;
 }
+
+.contact-link img:hover {
+    filter: invert(57%) sepia(89%) saturate(4716%) hue-rotate(2deg) brightness(96%) contrast(99%);
+}
+
+
+/* Extra extra small devices (phones, 360px and down) */
+
+@media only screen and (max-width: 360px) {}
+
+
+/* Extra small devices (phones, 360px and up) */
+
+@media only screen and (min-width: 360px) {}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {}

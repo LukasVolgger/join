@@ -14,21 +14,22 @@ a {
 }
 
 .backlog-item {
-    border-left: solid 12px;
+    border-left: solid 8px;
     margin: 16px 0;
     padding: 8px;
-    border-radius: 12px;
-    background-color: rgba(211, 211, 211, 0.7);
+    border-radius: 8px;
+    background-color: #f4f3fb;
     display: flex;
     align-items: center;
     cursor: pointer;
+    min-height: 80px;
 }
 
 .backlog-item:hover {
-    background-color: rgb(211, 211, 211);
+    background-color: #e8e5f1;
 }
 
-.backlog-item > * {
+.backlog-item>* {
     margin: 0 20px;
 }
 
@@ -76,6 +77,68 @@ a {
 
 .dialog {
     background-color: white;
-    height: 400px;
-    width: 600px;
+    border-radius: 16px;
 }
+
+.selection-dialog {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 36px;
+}
+
+.fa-xmark {
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.selection-dialog-btn {
+    /* width: 240px;
+    height: 48px; */
+    margin: 8px;
+    background-color: #1E3190;
+    border-color: #1E3190;
+}
+
+.edit-dialog {
+    position: relative;
+}
+
+.edit-dialog .add-task-form {
+    margin-top: 0;
+}
+
+
+/* Extra extra small devices (phones, 360px and down) */
+
+@media only screen and (max-width: 360px) {}
+
+
+/* Extra small devices (phones, 360px and up) */
+
+@media only screen and (min-width: 360px) {}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {}

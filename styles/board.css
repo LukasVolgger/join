@@ -22,6 +22,7 @@
 .border-content {
     background-color: lightgray;
     height: 100%;
+<<<<<<< HEAD
     padding-top: 5px;
 }
 
@@ -44,3 +45,36 @@
     display: flex;
     align-items: flex-start;
 }
+=======
+}
+
+
+/* Extra extra small devices (phones, 360px and down) */
+
+@media only screen and (max-width: 360px) {}
+
+
+/* Extra small devices (phones, 360px and up) */
+
+@media only screen and (min-width: 360px) {}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {}
+>>>>>>> b5a15835d4e4229bb5f5287a9c006a8fb8b15583

@@ -59,13 +59,17 @@
                             <div class="border-title">
                                 <h4> Testing</h4>
                             </div>
-                            <div class="border-content"></div>
+                            <div class="border-content" id="testing" ondrop="moveTo('closed')"
+                                ondragleave="removeHighLight('closed')"
+                                ondragover="allowDrop(event); hightlight('closed')"></div>
                         </div>
                         <div class="border-col">
                             <div class="border-title">
-                                <h4> Done</h4>
+                                <h4>Done</h4>
                             </div>
-                            <div class="border-content"></div>
+                            <div class="border-content" id="done" ondrop="moveTo('closed')"
+                                ondragleave="removeHighLight('closed')"
+                                ondragover="allowDrop(event); hightlight('closed')"></div>
                         </div>
                     </div>
 

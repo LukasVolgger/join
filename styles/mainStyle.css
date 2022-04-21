@@ -13,6 +13,21 @@ body {
     padding-bottom: 96px;
 }
 
+.d-none {
+    display: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #ee6002;
+    border-color: #ee6002;
+}
+
+.btn-primary:hover {
+    background-color: #c06b33;
+    border-color: #c06b33;
+}
+
 
 /* Right container Begin */
 
@@ -75,12 +90,13 @@ header h1 {
 }
 
 .submit-btn {
-    background-color: #1E3190;
-    border-color: #1E3190;
+    background-color: #75e900;
+    border-color: #75e900;
 }
 
 .submit-btn:hover {
-    background-color: #465396;
+    background-color: #41c300;
+    border-color: #41c300;
 }
 
 .input-field {
@@ -99,3 +115,33 @@ header h1 {
 
 
 /* Right container End */
+
+
+/* Extra extra small devices (phones, 360px and down) */
+
+@media only screen and (max-width: 360px) {}
+
+
+/* Extra small devices (phones, 360px and up) */
+
+@media only screen and (min-width: 360px) {}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {}

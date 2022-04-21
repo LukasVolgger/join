@@ -7,15 +7,12 @@
 - [ ] Help
 - [ ] Js Doc
 - [ ] Refactoring
-- [ ] Responsive Webdesign
-
-<h3>Samir</h3>
-
-- [ ] Board
+- [ ] Mobile Menu
 
 <h3>Samuel</h3>
 
 - [ ] Backlog 
+- [ ] Board
 
 <h3>Lukas</h3>
 
@@ -24,3 +21,4 @@
 - [X] AddTask
 - [X] About
 - [X] User login
+- [ ] Responsive Webdesign
