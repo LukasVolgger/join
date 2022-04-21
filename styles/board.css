@@ -22,4 +22,25 @@
 .border-content {
     background-color: lightgray;
     height: 100%;
+    padding-top: 5px;
+}
+
+/* Drag and Drop */
+
+.todo {
+    width: 95%;
+    border: 3px solid gray;
+    margin: 15px auto;
+    border-radius: 5px;
+    padding-left: 5px;
+    background-color: gainsboro;
+}
+
+.drag-area {
+    height: 200px;
+    background-color: lightgray;
+    border: 1px dotted black;
+    margin: 20px auto;
+    display: flex;
+    align-items: flex-start;
 }
