@@ -50,23 +50,50 @@ function openSelectionDialog(i) {
 /**
  * This function allows you to edit a backlog-item after create
  */
-function moveToBoard(i, task) {
-    boardTasks.push(task);
+function moveToBoard(i) {
+    boardTasks.push(tasks[i]);
     tasks.splice(i, 1);
-    saveToBackend();
-    closeDialog();
-    showBacklog();
+    updateBacklog();
 }
 
 
 /**
  * This function allows you to edit a backlog-item after create
  */
-function editTask(i, task) {
-    let content = document.getElementById('dialog-content');
-    content.innerHTML = templateEditTask(i, tasks[i]);
-    document.getElementById('change-task-title').value = task.title;
-    // not completely
+function editTask(i) {
+    document.getElementById('dialog-content').innerHTML = templateEditTask(i);
+    document.getElementById('change-task-title').value = tasks[i].title;
+    document.getElementById('change-date').value = tasks[i].due_date;
+    document.getElementById('change-task-description').value = tasks[i].description;
+    selectSavedOption('#change-task-category', tasks[i].category);
+    selectSavedOption('#change-task-urgency', tasks[i].urgency);
+    selectSavedOption('#change-assigned-to', tasks[i].assigned_to);
+}
+
+
+/**
+ * 
+ */
+function selectSavedOption(id, variable) {
+    Array.from(document.querySelector(id).options).forEach(function(option_element) {
+        if(option_element.value == variable) {
+            option_element.selected = true;
+        }
+    });
+} 
+
+
+/**
+ * 
+ */
+function changeTask(i) {
+    tasks[i].title = document.getElementById('change-task-title').value;
+    tasks[i].category = document.getElementById('change-task-category').value;
+    tasks[i].description = document.getElementById('change-task-description').value;
+    tasks[i].due_date = document.getElementById('change-date').value;
+    tasks[i].urgency = document.getElementById('change-task-urgency').value;
+    tasks[i].assigned_to = document.getElementById('change-assigned-to').value;
+    updateBacklog();
 }
 
 
@@ -75,9 +102,7 @@ function editTask(i, task) {
  */
  function deleteTask(i) {
     tasks.splice(i, 1);
-    saveToBackend();
-    closeDialog();
-    showBacklog();
+    updateBacklog();
 }
 
 
@@ -90,20 +115,30 @@ function closeDialog() {
 
 
 /**
+ * 
+ */
+function updateBacklog() {
+    saveToBackend();
+    closeDialog();
+    showBacklog();
+}
+
+
+/**
  * This function generate HTML-Code for one Backlog-Item
  */
-function templateBacklogItem(i, task) {
+function templateBacklogItem(i) {
     return `
-        <div class="backlog-item ${task.category}" id="backlog-item-${i}" onclick="openSelectionDialog(${i})">
+        <div class="backlog-item ${tasks[i].category}" id="backlog-item-${i}" onclick="openSelectionDialog(${i})">
             <div class="person">
-                <img class="rounded-circle profile-picture" src="../imgs/pp_${task.assigned_to}.jfif" alt="">
+                <img class="rounded-circle profile-picture" src="../imgs/pp_${tasks[i].assigned_to}.jfif" alt="">
                 <div class="person-name">
-                    <span>${task.assigned_to}</span>
-                    <a href="mailto:${task.assigned_to}@join.com">${task.assigned_to}@join.com</a>
+                    <span>${tasks[i].assigned_to}</span>
+                    <span style="color: #6f8bf3f7">${tasks[i].assigned_to}@join.com</span>
                 </div>
             </div>
-            <div> ${task.category} </div>
-            <div>${task.description}</div>
+            <div> ${tasks[i].category} </div>
+            <div class="backlog-item-description">${tasks[i].description}</div>
         </div>
     `;
 }
@@ -116,8 +151,8 @@ function templateSelectionDialog(i) {
     return `
         <div class="selection-dialog">
             <i class="fa-solid fa-xmark" onclick="closeDialog()"></i>
-            <button class="selection-dialog-btn btn btn-primary" onclick="moveToBoard(${i}, tasks[${i}])">Move to Board</button>
-            <button class="selection-dialog-btn btn btn-primary" onclick="editTask(${i}, tasks[${i}])">Edit Task</button>
+            <button class="selection-dialog-btn btn btn-primary" onclick="moveToBoard(${i})">Move to Board</button>
+            <button class="selection-dialog-btn btn btn-primary" onclick="editTask(${i})">Edit Task</button>
             <button class="selection-dialog-btn btn btn-primary" onclick="deleteTask(${i})">Delete Task</button>
         </div>
     `;
@@ -127,11 +162,11 @@ function templateSelectionDialog(i) {
 /**
  * This function generate dynamic HTML-Code for the edit dialog
  */
-function templateEditTask(i, task) {
+function templateEditTask(i) {
     return `
     <div class="edit-dialog">
         <i class="fa-solid fa-xmark" onclick="closeDialog()"></i>
-        <form action="" onsubmit="changeTask(); return false;" class="add-task-form">
+        <form action="" onsubmit="changeTask(${i}); return false;" class="add-task-form">
         <div class="add-task-form--left">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">TITLE</label>
@@ -147,18 +182,17 @@ function templateEditTask(i, task) {
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">DESCRIPTION</label>
-                <textarea class="form-control textarea-input" id="task-description" rows="3" required></textarea>
+                <textarea class="form-control textarea-input" id="change-task-description" rows="3" required></textarea>
             </div>
         </div>
         <div class="add-task-form--right">
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">DUE DATE</label>
-                <input type="date" class="form-control input-field" id="task-due-date" required>
+                <input type="date" class="form-control input-field" id="change-date" required>
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">URGENCY</label>
-                <select class="form-select input-field" id="task-urgency" aria-label="URGENCY" required>
-                    <option selected value="">...</option>
+                <select class="form-select input-field" id="change-task-urgency" aria-label="URGENCY" required>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
@@ -166,15 +200,14 @@ function templateEditTask(i, task) {
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">ASSIGNED TO</label>
-                <select class="form-select input-field" id="task-assigned-to" aria-label="ASSIGNED TO" required>
-                    <option selected value="">...</option>
+                <select class="form-select input-field" id="change-assigned-to" aria-label="ASSIGNED TO" required>
                     <option value="samir_barbat">Samir BARBAT</option>
                     <option value="samuel_bergen">Samuel Bergen</option>
                     <option value="lukas_volgger">Lukas VOLGGER</option>
                 </select>
             </div>
             <div class="mb-3 form-controls">
-                <button type="reset" class="btn btn-light cancel-btn">CANCEL</button>
+                <button type="reset" class="btn btn-light cancel-btn" onclick="closeDialog()">CANCEL</button>
                 <button type="submit" class="btn btn-primary submit-btn">SAVE CHANGES</button>
             </div>
         </div>

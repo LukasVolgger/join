@@ -8,9 +8,18 @@ a {
 
 .backlog-headline {
     display: flex;
-    justify-content: space-between;
     font-size: 20px;
     font-weight: bold;
+    color: #1E3190;;
+}
+
+.backlog-headline-person {
+    width: 308px;
+}
+
+.backlog-headline-description {
+    flex: 1;
+    text-align: end;
 }
 
 .backlog-item {
@@ -36,11 +45,19 @@ a {
 .person {
     display: flex;
     align-items: center;
+    width: 240px;
 }
 
 .person-name {
     display: flex;
     flex-direction: column;
+}
+
+.person-name span {
+    width: 192px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .profile-picture {
@@ -50,12 +67,17 @@ a {
     margin-right: 8px;
 }
 
+.backlog-item-description {
+    flex: 1;
+    text-align: end;
+}
+
 .category_1 {
     border-left-color: orange;
 }
 
 .category_2 {
-    border-left-color: blue;
+    border-left-color: palevioletred;
 }
 
 .category_3 {
@@ -131,12 +153,45 @@ a {
 
 /* Medium devices (landscape tablets, 768px and up) */
 
-@media only screen and (min-width: 768px) {}
+@media only screen and (max-width: 768px) {
+    .backlog-headline {
+        display: none;
+    }
+
+    .backlog-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .backlog-item >* {
+        padding: 8px 0;
+    }
+
+    .person {
+        width: 240px !important;
+    }
+    
+    .person-name span {
+        width: 192px !important;
+    }
+}
 
 
 /* Large devices (laptops/desktops, 992px and up) */
 
-@media only screen and (min-width: 992px) {}
+@media only screen and (max-width: 992px) {
+    .backlog-headline-person {
+        width: 278px;
+    }
+
+    .person {
+        width: 210px;
+    }
+    
+    .person-name span {
+        width: 162px;
+    }
+}
 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
