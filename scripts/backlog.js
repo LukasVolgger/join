@@ -37,13 +37,18 @@ function createBacklogItem() {
 }
 
 
+function showTask(i) {
+    openDialog();
+    document.getElementById('dialog-content').innerHTML = templateTask(i);
+}
+
+
 /**
  * Shows selection dialog for choosing different tasks
  */
 function openSelectionDialog(i) {
-    document.getElementById('dialog-bg').classList.remove('d-none');
-    let content = document.getElementById('dialog-content');
-    content.innerHTML = templateSelectionDialog(i);
+    openDialog();
+    document.getElementById('dialog-content').innerHTML = templateSelectionDialog(i);
 }
 
 
@@ -61,6 +66,7 @@ function moveToBoard(i) {
  * This function allows you to edit a backlog-item after create
  */
 function editTask(i) {
+    document.getElementById('dialog-content').innerHTML = '';
     document.getElementById('dialog-content').innerHTML = templateEditTask(i);
     document.getElementById('change-task-title').value = tasks[i].title;
     document.getElementById('change-date').value = tasks[i].due_date;
@@ -75,12 +81,12 @@ function editTask(i) {
  * 
  */
 function selectSavedOption(id, variable) {
-    Array.from(document.querySelector(id).options).forEach(function(option_element) {
-        if(option_element.value == variable) {
+    Array.from(document.querySelector(id).options).forEach(function (option_element) {
+        if (option_element.value == variable) {
             option_element.selected = true;
         }
     });
-} 
+}
 
 
 /**
@@ -94,15 +100,21 @@ function changeTask(i) {
     tasks[i].urgency = document.getElementById('change-task-urgency').value;
     tasks[i].assigned_to = document.getElementById('change-assigned-to').value;
     updateBacklog();
+    showTask(i);
 }
 
 
 /**
  * This function allows you to edit a backlog-item after create
  */
- function deleteTask(i) {
+function deleteTask(i) {
     tasks.splice(i, 1);
     updateBacklog();
+}
+
+
+function openDialog() {
+    document.getElementById('dialog-bg').classList.remove('d-none');
 }
 
 
@@ -129,7 +141,7 @@ function updateBacklog() {
  */
 function templateBacklogItem(i) {
     return `
-        <div class="backlog-item ${tasks[i].category}" id="backlog-item-${i}" onclick="openSelectionDialog(${i})">
+        <div class="backlog-item ${tasks[i].category}" id="backlog-item-${i}" onclick="showTask(${i})">
             <div class="person">
                 <img class="rounded-circle profile-picture" src="../imgs/pp_${tasks[i].assigned_to}.jfif" alt="">
                 <div class="person-name">
@@ -141,6 +153,55 @@ function templateBacklogItem(i) {
             <div class="backlog-item-description">${tasks[i].description}</div>
         </div>
     `;
+}
+
+
+function templateTask(i) {
+    return `
+        <div class="dialog-task ${tasks[i].category}" id="backlog-item-${i}">
+        <i class="fa-solid fa-xmark" aria-label="Close" onclick="closeDialog()"></i>
+        <div class"icon-menu">
+        <i class="fa-solid fa-clipboard" aria-label="Move to Board" onclick="moveToBoard(${i})"></i>
+        <i class="fa-solid fa-pen-to-square" aria-label="Edit Task" onclick="editTask(${i})"></i>
+        <i class="fa-solid fa-trash-can" aria-label="Delete Task" onclick="deleteTask(${i})"></i>
+        </div>
+            <div class="task-header">
+                <div>
+                    <div class="task-title"><b>Title</b></div>
+                    <div class="tast-title"> ${tasks[i].title} </div>
+                </div>
+                <div>
+                    <div><b>Assigned to</b></div>
+                    <div class="person">
+                        <img class="rounded-circle profile-picture" src="../imgs/pp_${tasks[i].assigned_to}.jfif" alt="">
+                        <div class="person-name">
+                            <span>${tasks[i].assigned_to}</span>
+                            <span style="color: #6f8bf3f7">${tasks[i].assigned_to}@join.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="task-footer">
+                <div class="left-task-footer">
+                    <div>
+                        <div><b>Category</b></div>
+                        <div>${tasks[i].category}</div>
+                    </div>
+                    <div>
+                        <div><b>Urgency</b></div>
+                        <div> ${tasks[i].urgency} </div>
+                    </div>
+                    <div>
+                        <div><b>Due Date</b></div>
+                        <div class="task-date">${tasks[i].due_date}</div>
+                    </div>
+                </div>
+                <div class="task-description">
+                    <div><b>Description</b></div>
+                    <div class="description">${tasks[i].description}</div>
+                </div>
+            </div>
+        `;
 }
 
 
@@ -207,7 +268,7 @@ function templateEditTask(i) {
                 </select>
             </div>
             <div class="mb-3 form-controls">
-                <button type="reset" class="btn btn-light cancel-btn" onclick="closeDialog()">CANCEL</button>
+                <button type="reset" class="btn btn-light cancel-btn" onclick="showTask(${i})">CANCEL</button>
                 <button type="submit" class="btn btn-primary submit-btn">SAVE CHANGES</button>
             </div>
         </div>

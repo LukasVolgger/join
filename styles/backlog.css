@@ -73,15 +73,15 @@ a {
 }
 
 .category_1 {
-    border-left-color: orange;
+    border-color: orange;
 }
 
 .category_2 {
-    border-left-color: palevioletred;
+    border-color: palevioletred;
 }
 
 .category_3 {
-    border-left-color: green;
+    border-color: green;
 }
 
 .dialog-bg {
@@ -99,7 +99,35 @@ a {
 
 .dialog {
     background-color: white;
-    border-radius: 16px;
+    border-radius: 8px;
+}
+
+.dialog-task {
+    position: relative;
+    min-height: 260px;
+    width: 450px;
+    padding: 12px;
+    border: solid 8px;
+    border-radius: 8px;
+    background-color: #f4f3fb;
+}
+
+.task-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-task-footer {
+    padding-right: 24px;
+}
+
+.task-description {
+    margin-top: 24px;
+    width: 280px;
+}
+
+.description {
+    background-color: #d9d9d9;
 }
 
 .selection-dialog {
@@ -111,12 +139,46 @@ a {
     padding: 36px;
 }
 
+.task-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-title {
+    font-size: 22px;
+}
+
 .fa-xmark {
     position: absolute;
     right: 14px;
     top: 10px;
     font-size: 28px;
     cursor: pointer;
+}
+
+.fa-solid {
+    position: absolute;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.fa-solid:hover  {
+    color:rgba(0, 0, 0, 0.562)
+}
+
+.fa-clipboard {
+    right: 100px;
+    bottom: 20px;
+}
+
+.fa-pen-to-square {
+    right: 54px;
+    bottom: 20px;
+}
+        
+.fa-trash-can {
+    right: 20px;
+    bottom: 20px;
 }
 
 .selection-dialog-btn {
