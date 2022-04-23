@@ -11,7 +11,7 @@
 
 <h3>Samuel</h3>
 
-- [ ] Backlog 
+- [X] Backlog 
 - [ ] Board
 
 <h3>Lukas</h3>
