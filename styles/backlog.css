@@ -10,7 +10,8 @@ a {
     display: flex;
     font-size: 20px;
     font-weight: bold;
-    color: #1E3190;;
+    color: #1E3190;
+    ;
 }
 
 .backlog-headline-person {
@@ -70,6 +71,9 @@ a {
 .backlog-item-description {
     flex: 1;
     text-align: end;
+    word-break: break-all;
+    white-space: pre-wrap;
+    overflow: hidden;
 }
 
 .category_1 {
@@ -107,9 +111,14 @@ a {
     min-height: 260px;
     width: 450px;
     padding: 12px;
-    border: solid 8px;
+    border-style: solid;
+    border-width: 8px;
     border-radius: 8px;
     background-color: #f4f3fb;
+}
+
+.task-title-container {
+    width: 158px;
 }
 
 .task-footer {
@@ -122,12 +131,14 @@ a {
 }
 
 .task-description {
-    margin-top: 24px;
-    width: 280px;
+    margin-top: 16px;
 }
 
 .description {
-    background-color: #d9d9d9;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-break: break-all;
+    margin-bottom: 36px;
 }
 
 .selection-dialog {
@@ -145,7 +156,16 @@ a {
 }
 
 .task-title {
-    font-size: 22px;
+    overflow: hidden;
+    white-space: pre-wrap;
+    word-break: break-all;
+    text-overflow: ellipsis;
+}
+
+.task-settings {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .fa-xmark {
@@ -162,12 +182,12 @@ a {
     font-size: 22px;
 }
 
-.fa-solid:hover  {
-    color:rgba(0, 0, 0, 0.562)
+.fa-solid:hover {
+    color: rgba(0, 0, 0, 0.562)
 }
 
-.fa-clipboard {
-    right: 100px;
+.fa-file-circle-plus {
+    right: 88px;
     bottom: 20px;
 }
 
@@ -175,18 +195,10 @@ a {
     right: 54px;
     bottom: 20px;
 }
-        
+
 .fa-trash-can {
     right: 20px;
     bottom: 20px;
-}
-
-.selection-dialog-btn {
-    /* width: 240px;
-    height: 48px; */
-    margin: 8px;
-    background-color: #1E3190;
-    border-color: #1E3190;
 }
 
 .edit-dialog {
@@ -225,14 +237,14 @@ a {
         align-items: flex-start;
     }
 
-    .backlog-item >* {
+    .backlog-item>* {
         padding: 8px 0;
     }
 
     .person {
         width: 240px !important;
     }
-    
+
     .person-name span {
         width: 192px !important;
     }
@@ -249,7 +261,7 @@ a {
     .person {
         width: 210px;
     }
-    
+
     .person-name span {
         width: 162px;
     }
