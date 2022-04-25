@@ -1,61 +1,46 @@
-let todos = [
-    {
-        'id': 0,
-        'title': 'Aufgabe-1',
-        'category': 'todo'
-    },
-    {
-        'id': 1,
-        'title': 'Aufgabe-2',
-        'category': 'todo'
-    },
-    {
-        'id': 2,
-        'title': 'Aufgabe-3',
-        'category': 'todo'
-    }
-];
+
+//currently not working
 
 let currentDraggedElement;
 
 function updateHTML() {
 
     // To Do
-    let todo = todos.filter(t => t['category'] == 'todo');
+    let todo = tasks.filter(t => t['processing-state'] == 'todo');
 
     document.getElementById('todo').innerHTML = '';
 
     for (let index = 0; index < todo.length; index++) {
         const element = todo[index];
-        document.getElementById('todo').innerHTML += gernerateTodoHTML(element);
+        document.getElementById('todo').innerHTML += generateTodoHTML(element);
     }
 
     // In Progress
-    let inProgress = todos.filter(t => t['category'] == 'inProgress');
+    let inProgress = tasks.filter(t => t['processing-state'] == 'inProgress');
 
     document.getElementById('inProgress').innerHTML = '';
 
     for (let index = 0; index < inProgress.length; index++) {
         const element = inProgress[index];
-        document.getElementById('inProgress').innerHTML += gernerateTodoHTML(element);
+        document.getElementById('inProgress').innerHTML += generateTodoHTML(element);
     }
     //Testing
-    let testing = todos.filter(t => t['category'] == 'testing');
+    let testing = tasks.filter(t => t['processing-state'] == 'testing');
 
     document.getElementById('testing').innerHTML = '';
 
     for (let index = 0; index < testing.length; index++) {
         const element = testing[index];
-        document.getElementById('testing').innerHTML += gernerateTodoHTML(element);
+        document.getElementById('testing').innerHTML += generateTodoHTML(element);
     }
     // Done
-    let done = todos.filter(t => t['category'] == 'done');
+    let done = tasks.filter(t => t['processing-state'] == 'done');
 
     document.getElementById('done').innerHTML = '';
 
     for (let index = 0; index < done.length; index++) {
         const element = done[index];
-        document.getElementById('done').innerHTML += gernerateTodoHTML(element);
+        document.getElementById('done').innerHTML += generateTodoHTML(element);
     }
 }
 
@@ -63,8 +48,8 @@ function startDragging(id) {
     currentDraggedElement = id;
 }
 
-function gernerateTodoHTML(element) {
-    return `<div draggable="true" ondragstart = "startDragging(${element['id']})" class="todo">${element['title']}</div>`;
+function generateTodoHTML(element) {
+    return `<div draggable="true" ondragstart="startDragging" style"width: 50px; height: 20px; backgroundcolor: black"; color: white;>${element.title}</div>`;
 }
 
 function allowDrop(ev) {
@@ -72,7 +57,7 @@ function allowDrop(ev) {
 }
 
 function moveTo(category) {
-    todos[currentDraggedElement]['category'] = category;
+    todos[currentDraggedElement]['processing-state'] = category;
     updateHTML();
 }
 

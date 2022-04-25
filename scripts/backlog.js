@@ -1,9 +1,5 @@
 'use strict';
 
-// ####################################### GLOBAL SCOPE #########################################
-
-let boardTasks = [];
-
 // ####################################### MAIN FUNCTIONS #######################################
 
 
@@ -32,7 +28,9 @@ function showBacklog() {
 function createBacklogItem() {
     let content = document.getElementById('backlog-content');
     for (let i = 0; i < tasks.length; i++) {
-        content.innerHTML += templateBacklogItem(i, tasks[i]);
+        if (tasks[i].processing_state == 'unallocated') {
+            content.innerHTML += templateBacklogItem(i, tasks[i]);
+        }
     }
 }
 
@@ -47,8 +45,7 @@ function showTask(i) {
  * This function allows you to edit a backlog-item after create
  */
 function moveToBoard(i) {
-    boardTasks.push(tasks[i]);
-    tasks.splice(i, 1);
+    tasks[i].processing_state = 'todo';
     updateBacklog();
 }
 

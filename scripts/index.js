@@ -20,6 +20,7 @@ function addTask() {
             'due_date': `${dueDate.value}`,
             'urgency': `${urgency.value}`,
             'assigned_to': `${assignedTo.value}`,
+            'processing_state': 'unallocated',
             'creation_date': new Date().getTime()
         };
 

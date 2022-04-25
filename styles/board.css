@@ -11,8 +11,7 @@
 
 .border-title {
     text-align: center;
-    /* Ist bereits in der mainStyle.css definiert */
-    /* font-family: 'PT Sans', sans-serif; */
+    color: #1E3190;
 }
 
 .border-title h4 {
@@ -20,7 +19,7 @@
 }
 
 .border-content {
-    background-color: lightgray;
+    background-color: #F4F3FB;
     height: 100%;
     padding-top: 5px;
 }
@@ -29,11 +28,12 @@
 
 .todo {
     width: 95%;
-    border: 3px solid gray;
+    border-style: solid;
+    border-width: 4px;
     margin: 15px auto;
     border-radius: 5px;
     padding-left: 5px;
-    background-color: gainsboro;
+    background-color: white;
 }
 
 .drag-area {
