@@ -11,26 +11,31 @@ function addTask() {
     let urgency = document.getElementById('task-urgency');
     let assignedTo = document.getElementById('task-assigned-to');
 
-    let task = {
-        'title': `${title.value}`,
-        'category': `${category.value}`,
-        'description': `${description.value}`,
-        'due_date': `${dueDate.value}`,
-        'urgency': `${urgency.value}`,
-        'assigned_to': `${assignedTo.value}`,
-        'creation_date': new Date().getTime()
-    };
+    // Make sure all input forms have values
+    if (title.value && category.value && description.value && dueDate.value && urgency.value && assignedTo.value) {
+        let task = {
+            'title': `${title.value}`,
+            'category': `${category.value}`,
+            'description': `${description.value}`,
+            'due_date': `${dueDate.value}`,
+            'urgency': `${urgency.value}`,
+            'assigned_to': `${assignedTo.value}`,
+            'creation_date': new Date().getTime()
+        };
 
-    console.log(task);
-    tasks.push(task);
+        console.log(task);
+        tasks.push(task);
 
-    saveToBackend();
+        saveToBackend();
 
-    // Reset input fields
-    title.value = '';
-    category.value = '';
-    description.value = '';
-    dueDate.value = '';
-    urgency.value = '';
-    assignedTo.value = '';
+        // Reset input fields
+        title.value = '';
+        category.value = '';
+        description.value = '';
+        dueDate.value = '';
+        urgency.value = '';
+        assignedTo.value = '';
+
+        // location.reload();
+    }
 }
