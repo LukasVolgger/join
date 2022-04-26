@@ -27,15 +27,18 @@ function addTask() {
         tasks.push(task);
 
         saveToBackend();
+        resetUserInput();
 
-        // Reset input fields
-        title.value = '';
-        category.value = '';
-        description.value = '';
-        dueDate.value = '';
-        urgency.value = '';
-        assignedTo.value = '';
-
-        // location.reload();
+        // Trigger notice modal
+        document.getElementById('notice-modal-trigger').click();
     }
+}
+
+function resetUserInput() {
+    document.getElementById('task-title').value = '';
+    document.getElementById('task-category').value = '';
+    document.getElementById('task-description').value = '';
+    document.getElementById('task-due-date').value = '';
+    document.getElementById('task-urgency').value = '';
+    document.getElementById('task-assigned-to').value = '';
 }

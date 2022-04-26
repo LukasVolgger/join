@@ -28,12 +28,32 @@ body {
     border-color: #c06b33;
 }
 
+.modal {
+    position: absolute;
+}
+
+.modal-header {
+    justify-content: unset;
+    gap: 8px;
+}
+
+.modal-header img {
+    width: 24px;
+}
+
+.modal-title {
+    font-weight: 600;
+    font-size: 20px;
+    color: #1E3190;
+}
+
 
 /* Right container Begin */
 
 .right-container {
     display: flex;
     flex-direction: column;
+    position: relative;
     padding-left: 16px;
     padding-right: 16px;
     width: 100%;
