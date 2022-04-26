@@ -1,9 +1,5 @@
 'use strict';
 
-// ####################################### GLOBAL SCOPE #########################################
-
-let boardTasks = [];
-
 // ####################################### MAIN FUNCTIONS #######################################
 
 
@@ -32,7 +28,9 @@ function showBacklog() {
 function createBacklogItem() {
     let content = document.getElementById('backlog-content');
     for (let i = 0; i < tasks.length; i++) {
-        content.innerHTML += templateBacklogItem(i, tasks[i]);
+        if (tasks[i].processing_state == 'unallocated') {
+            content.innerHTML += templateBacklogItem(i, tasks[i]);
+        }
     }
 }
 
@@ -44,20 +42,10 @@ function showTask(i) {
 
 
 /**
- * Shows selection dialog for choosing different tasks
- */
-function openSelectionDialog(i) {
-    openDialog();
-    document.getElementById('dialog-content').innerHTML = templateSelectionDialog(i);
-}
-
-
-/**
  * This function allows you to edit a backlog-item after create
  */
 function moveToBoard(i) {
-    boardTasks.push(tasks[i]);
-    tasks.splice(i, 1);
+    tasks[i].processing_state = 'todo';
     updateBacklog();
 }
 
@@ -161,14 +149,14 @@ function templateTask(i) {
         <div class="dialog-task ${tasks[i].category}" id="backlog-item-${i}">
         <i class="fa-solid fa-xmark" aria-label="Close" onclick="closeDialog()"></i>
         <div class"icon-menu">
-        <i class="fa-solid fa-clipboard" aria-label="Move to Board" onclick="moveToBoard(${i})"></i>
+        <i class="fa-solid fa-file-circle-plus" aria-label="Move to Board" onclick="moveToBoard(${i})"></i>
         <i class="fa-solid fa-pen-to-square" aria-label="Edit Task" onclick="editTask(${i})"></i>
         <i class="fa-solid fa-trash-can" aria-label="Delete Task" onclick="deleteTask(${i})"></i>
         </div>
             <div class="task-header">
-                <div>
+                <div class="task-title-container">
                     <div class="task-title"><b>Title</b></div>
-                    <div class="tast-title"> ${tasks[i].title} </div>
+                    <div class="task-title"> ${tasks[i].title} </div>
                 </div>
                 <div>
                     <div><b>Assigned to</b></div>
@@ -181,42 +169,26 @@ function templateTask(i) {
                     </div>
                 </div>
             </div>
-            <div class="task-footer">
-                <div class="left-task-footer">
-                    <div>
-                        <div><b>Category</b></div>
-                        <div>${tasks[i].category}</div>
-                    </div>
-                    <div>
-                        <div><b>Urgency</b></div>
-                        <div> ${tasks[i].urgency} </div>
-                    </div>
-                    <div>
-                        <div><b>Due Date</b></div>
-                        <div class="task-date">${tasks[i].due_date}</div>
-                    </div>
+            <div class="task-settings">
+                <div>
+                    <div><b>Category</b></div>
+                    <div>${tasks[i].category}</div>
                 </div>
+                <div>
+                    <div><b>Urgency</b></div>
+                    <div> ${tasks[i].urgency} </div>
+                </div>
+                <div>
+                    <div><b>Due Date</b></div>
+                    <div class="task-date">${tasks[i].due_date}</div>
+                </div>
+            </div>
                 <div class="task-description">
-                    <div><b>Description</b></div>
+                    <div><b>Description:</b></div>
                     <div class="description">${tasks[i].description}</div>
                 </div>
             </div>
         `;
-}
-
-
-/**
- * This function generate dynamic HTML-Code for the selection dialog
- */
-function templateSelectionDialog(i) {
-    return `
-        <div class="selection-dialog">
-            <i class="fa-solid fa-xmark" onclick="closeDialog()"></i>
-            <button class="selection-dialog-btn btn btn-primary" onclick="moveToBoard(${i})">Move to Board</button>
-            <button class="selection-dialog-btn btn btn-primary" onclick="editTask(${i})">Edit Task</button>
-            <button class="selection-dialog-btn btn btn-primary" onclick="deleteTask(${i})">Delete Task</button>
-        </div>
-    `;
 }
 
 
