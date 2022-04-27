@@ -1,0 +1,149 @@
+.right-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    margin-left: 200px;
+}
+
+header h1 {
+    font-weight: 600;
+}
+
+.title-description {
+    color: #1E3190;
+}
+
+.add-task-form {
+    display: flex;
+    background-color: #F4F3FB;
+    height: 100%;
+    padding: 32px;
+    margin-top: 32px;
+    border-radius: 16px;
+    gap: 48px;
+}
+
+.add-task-form--left,
+.add-task-form--right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.form-label {
+    font-weight: 600;
+    font-size: 20px;
+    color: #1E3190;
+}
+
+.form-control {
+    resize: none;
+}
+
+.cancel-btn {
+    color: #1E3190;
+    font-weight: 600;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.cancel-btn:hover {
+    background-color: transparent;
+    border-color: transparent;
+    color: #1E3190;
+}
+
+.submit-btn {
+    background-color: #75e900;
+    border-color: #75e900;
+}
+
+.submit-btn:hover {
+    background-color: #41c300;
+    border-color: #41c300;
+}
+
+.input-field {
+    height: 56px;
+}
+
+.textarea-input {
+    height: 128px;
+}
+
+.form-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+
+/* Extra extra small devices (phones, 360px and down) */
+
+@media only screen and (max-width: 360px) {
+    .border-spacing {
+        padding-top: 64px;
+        padding-bottom: 54px;
+    }
+    .mobile-menu-hidden {
+        transform: translateX(0%);
+        transition: all 225ms ease-in-out;
+    }
+    .mobile-menu-visible {
+        transform: translateX(-100%);
+        transition: all 225ms ease-in-out;
+    }
+    .sidebar-container {
+        width: 100%;
+    }
+    .right-container {
+        margin-left: 0;
+    }
+}
+
+
+/* Extra small devices (phones, 360px and up) */
+
+@media only screen and (min-width: 360px) {
+    .mobile-menu-hidden {
+        transform: translateX(0%);
+        transition: all 225ms ease-in-out;
+    }
+    .mobile-menu-visible {
+        transform: translateX(-100%);
+        transition: all 225ms ease-in-out;
+    }
+}
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+
+@media only screen and (min-width: 600px) {
+    .mobile-menu-hidden {
+        transform: translateX(-100%);
+        transition: all 225ms ease-in-out;
+    }
+    .mobile-menu-visible {
+        transform: translateX(0%);
+        transition: all 225ms ease-in-out;
+    }
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+
+@media only screen and (min-width: 768px) {}
+
+
+/* Large devices (laptops/desktops, 992px and up) */
+
+@media only screen and (min-width: 992px) {}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+
+@media only screen and (min-width: 1200px) {}
