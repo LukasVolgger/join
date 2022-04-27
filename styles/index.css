@@ -8,6 +8,11 @@
     margin-left: 200px;
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+}
+
 header h1 {
     font-weight: 600;
 }
@@ -19,7 +24,6 @@ header h1 {
 .add-task-form {
     display: flex;
     background-color: #F4F3FB;
-    height: 100%;
     padding: 32px;
     margin-top: 32px;
     border-radius: 16px;
@@ -89,6 +93,10 @@ header h1 {
         padding-top: 64px;
         padding-bottom: 54px;
     }
+    header {
+        align-items: center;
+        text-align: center;
+    }
     .mobile-menu-hidden {
         transform: translateX(0%);
         transition: all 225ms ease-in-out;
@@ -103,12 +111,28 @@ header h1 {
     .right-container {
         margin-left: 0;
     }
+    .add-task-form {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    .add-task-form--left,
+    .add-task-form--right {
+        width: 100%;
+    }
 }
 
 
 /* Extra small devices (phones, 360px and up) */
 
 @media only screen and (min-width: 360px) {
+    .border-spacing {
+        padding-top: 64px;
+        padding-bottom: 54px;
+    }
+    header {
+        align-items: center;
+        text-align: center;
+    }
     .mobile-menu-hidden {
         transform: translateX(0%);
         transition: all 225ms ease-in-out;
@@ -117,12 +141,31 @@ header h1 {
         transform: translateX(-100%);
         transition: all 225ms ease-in-out;
     }
+    .right-container {
+        margin-left: 0;
+    }
+    .add-task-form {
+        flex-wrap: wrap;
+        gap: 0;
+    }
+    .add-task-form--left,
+    .add-task-form--right {
+        width: 100%;
+    }
 }
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 
 @media only screen and (min-width: 600px) {
+    .border-spacing {
+        padding-top: 48px;
+        padding-bottom: 96px;
+    }
+    header {
+        align-items: unset;
+        text-align: unset;
+    }
     .mobile-only {
         display: none;
     }
@@ -133,6 +176,17 @@ header h1 {
     .mobile-menu-visible {
         transform: translateX(0%);
         transition: all 225ms ease-in-out;
+    }
+    .right-container {
+        margin-left: 200px;
+    }
+    .add-task-form {
+        flex-wrap: unset;
+        gap: 48px;
+    }
+    .add-task-form--left,
+    .add-task-form--right {
+        width: 100%;
     }
 }
 
@@ -149,4 +203,20 @@ header h1 {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+    .sidebar-container {
+        width: 300px;
+    }
+    .logo-img {
+        width: 96px;
+    }
+    .sidebar-nav a {
+        font-size: 1.8em;
+    }
+    .right-container {
+        margin-left: 300px;
+    }
+    .user-profile-btn img {
+        width: 96px;
+    }
+}

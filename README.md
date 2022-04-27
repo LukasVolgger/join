@@ -7,7 +7,6 @@
 - [ ] Help
 - [ ] Js Doc
 - [ ] Refactoring
-- [ ] Mobile Menu
 
 <h3>Samuel</h3>
 
@@ -21,4 +20,5 @@
 - [X] AddTask
 - [X] About
 - [X] User login
+- [X] Mobile Menu
 - [ ] Responsive Webdesign
