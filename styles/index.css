@@ -123,6 +123,9 @@ header h1 {
 /* Small devices (portrait tablets and large phones, 600px and up) */
 
 @media only screen and (min-width: 600px) {
+    .mobile-only {
+        display: none;
+    }
     .mobile-menu-hidden {
         transform: translateX(-100%);
         transition: all 225ms ease-in-out;

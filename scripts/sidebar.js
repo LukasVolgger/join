@@ -48,4 +48,5 @@ function logout() {
 function toggleMobileMenu() {
     document.getElementById('sidebar').classList.toggle('mobile-menu-hidden');
     document.getElementById('sidebar').classList.toggle('mobile-menu-visible');
+    document.body.classList.toggle('scrolling-not-allowed');
 }
