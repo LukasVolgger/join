@@ -212,62 +212,111 @@ a {
 
 /* Extra extra small devices (phones, 360px and down) */
 
-@media only screen and (max-width: 360px) {}
+@media only screen and (max-width: 360px) {
+    .border-spacing {
+        padding-top: 64px;
+        padding-bottom: 54px;
+    }
+    header {
+        align-items: center;
+        text-align: center;
+    }
+    .mobile-menu-hidden {
+        transform: translateX(0%);
+        transition: all 225ms ease-in-out;
+    }
+    .mobile-menu-visible {
+        transform: translateX(-100%);
+        transition: all 225ms ease-in-out;
+    }
+    .sidebar-container {
+        width: 100%;
+    }
+    .right-container {
+        margin-left: 0;
+    }
+}
 
 
 /* Extra small devices (phones, 360px and up) */
 
-@media only screen and (min-width: 360px) {}
+@media only screen and (min-width: 360px) {
+    .border-spacing {
+        padding-top: 64px;
+        padding-bottom: 54px;
+    }
+    header {
+        align-items: center;
+        text-align: center;
+    }
+    .mobile-menu-hidden {
+        transform: translateX(0%);
+        transition: all 225ms ease-in-out;
+    }
+    .mobile-menu-visible {
+        transform: translateX(-100%);
+        transition: all 225ms ease-in-out;
+    }
+    .right-container {
+        margin-left: 0;
+    }
+}
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    .border-spacing {
+        padding-top: 48px;
+        padding-bottom: 96px;
+    }
+    header {
+        align-items: unset;
+        text-align: unset;
+    }
+    .mobile-only {
+        display: none;
+    }
+    .mobile-menu-hidden {
+        transform: translateX(-100%);
+        transition: all 225ms ease-in-out;
+    }
+    .mobile-menu-visible {
+        transform: translateX(0%);
+        transition: all 225ms ease-in-out;
+    }
+    .right-container {
+        margin-left: 200px;
+    }
+}
 
 
 /* Medium devices (landscape tablets, 768px and up) */
 
-@media only screen and (max-width: 768px) {
-    .backlog-headline {
-        display: none;
-    }
-
-    .backlog-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .backlog-item>* {
-        padding: 8px 0;
-    }
-
-    .person {
-        width: 240px !important;
-    }
-
-    .person-name span {
-        width: 192px !important;
-    }
-}
+@media only screen and (min-width: 768px) {}
 
 
 /* Large devices (laptops/desktops, 992px and up) */
 
-@media only screen and (max-width: 992px) {
-    .backlog-headline-person {
-        width: 278px;
-    }
-
-    .person {
-        width: 210px;
-    }
-
-    .person-name span {
-        width: 162px;
-    }
-}
+@media only screen and (min-width: 992px) {}
 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+    .sidebar-container {
+        width: 300px;
+    }
+    .logo-img {
+        width: 96px;
+    }
+    .sidebar-nav a {
+        font-size: 1.8em;
+    }
+    .right-container {
+        margin-left: 300px;
+    }
+    .user-profile-btn img {
+        width: 96px;
+    }
+}
