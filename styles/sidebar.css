@@ -65,3 +65,32 @@ aside {
 .user-profile-btn img {
     width: 64px;
 }
+
+.mobile-menu-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.mobile-menu-btn img {
+    width: 32px;
+}
+
+.mobile-menu-btn img:hover {
+    filter: invert(57%) sepia(89%) saturate(4716%) hue-rotate(2deg) brightness(96%) contrast(99%);
+}
+
+.mobile-menu-hidden {
+    transform: translateX(-100%);
+    transition: all 225ms ease-in-out;
+}
+
+.mobile-menu-visible {
+    transform: translateX(0%);
+    transition: all 225ms ease-in-out;
+}

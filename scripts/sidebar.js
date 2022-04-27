@@ -41,3 +41,11 @@ function selectNavElement() {
 function logout() {
     window.location.href = '../login.html';
 }
+
+/**
+ * Toggles the mobile menu on/off
+ */
+function toggleMobileMenu() {
+    document.getElementById('sidebar').classList.toggle('mobile-menu-hidden');
+    document.getElementById('sidebar').classList.toggle('mobile-menu-visible');
+}
