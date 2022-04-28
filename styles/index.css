@@ -204,7 +204,7 @@ header h1 {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
 @media only screen and (min-width: 1200px) {
-    .sidebar-container {
+    /* .sidebar-container {
         width: 300px;
     }
     .logo-img {
@@ -218,5 +218,5 @@ header h1 {
     }
     .user-profile-btn img {
         width: 96px;
-    }
+    } */
 }
