@@ -1,3 +1,26 @@
+.right-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+    margin-left: 200px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
+
+header h1 {
+    font-weight: 600;
+}
+
+.title-description {
+    color: #1E3190;
+}
+
 a {
     text-decoration: none;
 }
@@ -304,7 +327,7 @@ a {
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
 @media only screen and (min-width: 1200px) {
-    .sidebar-container {
+    /* .sidebar-container {
         width: 300px;
     }
     .logo-img {
@@ -318,5 +341,5 @@ a {
     }
     .user-profile-btn img {
         width: 96px;
-    }
+    } */
 }
