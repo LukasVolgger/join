@@ -69,7 +69,7 @@ function editTask(i) {
  * 
  */
 function selectSavedOption(id, variable) {
-    Array.from(document.querySelector(id).options).forEach(function (option_element) {
+    Array.from(document.querySelector(id).options).forEach(function(option_element) {
         if (option_element.value == variable) {
             option_element.selected = true;
         }
@@ -149,9 +149,9 @@ function templateTask(i) {
         <div class="dialog-task ${tasks[i].category}" id="backlog-item-${i}">
         <i class="fa-solid fa-xmark" aria-label="Close" onclick="closeDialog()"></i>
         <div class"icon-menu">
-        <i class="fa-solid fa-file-circle-plus" aria-label="Move to Board" onclick="moveToBoard(${i})"></i>
-        <i class="fa-solid fa-pen-to-square" aria-label="Edit Task" onclick="editTask(${i})"></i>
-        <i class="fa-solid fa-trash-can" aria-label="Delete Task" onclick="deleteTask(${i})"></i>
+        <i class="fa-solid fa-file-circle-plus" aria-label="Move to Board" title="Move to Board" onclick="moveToBoard(${i})"></i>
+        <i class="fa-solid fa-pen-to-square" aria-label="Edit Task" title="Edit Task" onclick="editTask(${i})"></i>
+        <i class="fa-solid fa-trash-can" aria-label="Delete Task" title="Delete Task" onclick="deleteTask(${i})"></i>
         </div>
             <div class="task-header">
                 <div class="task-title-container">
