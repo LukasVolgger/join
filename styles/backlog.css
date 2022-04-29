@@ -34,26 +34,23 @@ a {
     font-size: 20px;
     font-weight: bold;
     color: #1E3190;
-    ;
 }
 
-.backlog-headline-person {
+.backlog-headline-person,
+.backlog-headline-category,
+.backlog-headline-description {
     width: 308px;
 }
 
-.backlog-headline-description {
-    flex: 1;
-    text-align: end;
-}
-
 .backlog-item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     border-left: solid 8px;
     margin: 16px 0;
     padding: 8px;
     border-radius: 8px;
     background-color: #f4f3fb;
-    display: flex;
-    align-items: center;
     cursor: pointer;
     min-height: 80px;
 }
@@ -62,14 +59,10 @@ a {
     background-color: #e8e5f1;
 }
 
-.backlog-item>* {
-    margin: 0 20px;
-}
-
-.person {
+.backlog-item-assigned {
     display: flex;
     align-items: center;
-    width: 240px;
+    width: 292px;
 }
 
 .person-name {
@@ -91,12 +84,24 @@ a {
     margin-right: 8px;
 }
 
+.backlog-item-category {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+}
+
 .backlog-item-description {
-    flex: 1;
-    text-align: end;
-    word-break: break-all;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
     white-space: pre-wrap;
     overflow: hidden;
+}
+
+.backlog-item-category,
+.backlog-item-description {
+    word-break: break-all;
+    width: 308px;
 }
 
 .category_1 {
@@ -160,7 +165,6 @@ a {
 .description {
     overflow: hidden;
     white-space: pre-wrap;
-    word-break: break-all;
     margin-bottom: 36px;
 }
 
@@ -181,7 +185,6 @@ a {
 .task-title {
     overflow: hidden;
     white-space: pre-wrap;
-    word-break: break-all;
     text-overflow: ellipsis;
 }
 
@@ -236,6 +239,9 @@ a {
 /* Extra extra small devices (phones, 360px and down) */
 
 @media only screen and (max-width: 360px) {
+    .hide-mobile {
+        display: none;
+    }
     .border-spacing {
         padding-top: 64px;
         padding-bottom: 54px;
@@ -258,12 +264,18 @@ a {
     .right-container {
         margin-left: 0;
     }
+    .backlog-container {
+        margin-top: 0;
+    }
 }
 
 
 /* Extra small devices (phones, 360px and up) */
 
 @media only screen and (min-width: 360px) {
+    .hide-mobile {
+        display: none;
+    }
     .border-spacing {
         padding-top: 64px;
         padding-bottom: 54px;
@@ -282,6 +294,9 @@ a {
     }
     .right-container {
         margin-left: 0;
+    }
+    .backlog-container {
+        margin-top: 0;
     }
 }
 
@@ -321,7 +336,14 @@ a {
 
 /* Large devices (laptops/desktops, 992px and up) */
 
-@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 992px) {
+    .hide-mobile {
+        display: flex;
+    }
+    .backlog-container {
+        margin-top: 32px;
+    }
+}
 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
