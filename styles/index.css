@@ -203,20 +203,4 @@ header h1 {
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 
-@media only screen and (min-width: 1200px) {
-    /* .sidebar-container {
-        width: 300px;
-    }
-    .logo-img {
-        width: 96px;
-    }
-    .sidebar-nav a {
-        font-size: 1.8em;
-    }
-    .right-container {
-        margin-left: 300px;
-    }
-    .user-profile-btn img {
-        width: 96px;
-    } */
-}
+@media only screen and (min-width: 1200px) {}
