@@ -1,5 +1,14 @@
+'use strict';
 
 //currently not working
+
+async function init() {
+    includeHTML();
+    await downloadFromServer();
+    await loadFromBackend();
+    selectNavElement();
+    updateHTML();
+}
 
 let currentDraggedElement;
 
@@ -49,7 +58,7 @@ function startDragging(id) {
 }
 
 function generateTodoHTML(element) {
-    return `<div draggable="true" ondragstart="startDragging" style"width: 50px; height: 20px; backgroundcolor: black"; color: white;>${element.title}</div>`;
+    return `<div draggable="true" ondragstart="startDragging(${element.id})" style"width: 50px; height: 20px; backgroundcolor: black"; color: white;>${element.title}</div>`;
 }
 
 function allowDrop(ev) {

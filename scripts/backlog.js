@@ -1,8 +1,5 @@
 'use strict';
 
-// ####################################### MAIN FUNCTIONS #######################################
-
-
 async function init() {
     includeHTML();
     await downloadFromServer();
