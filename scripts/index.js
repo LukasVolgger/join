@@ -3,7 +3,7 @@
 /**
  * Gets the user input and creates an object 
  */
-function addTask() {
+async function addTask() {
     let title = document.getElementById('task-title');
     let category = document.getElementById('task-category');
     let description = document.getElementById('task-description');
@@ -27,7 +27,7 @@ function addTask() {
         console.log(task);
         tasks.push(task);
 
-        saveToBackend();
+        await saveToBackend();
         resetUserInput();
 
         // Trigger notice modal

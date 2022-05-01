@@ -41,7 +41,7 @@ function showTask(i) {
 /**
  * This function allows you to edit a backlog-item after create
  */
-function moveToBoard(i) {
+async function moveToBoard(i) {
     tasks[i].processing_state = 'todo';
     updateBacklog();
 }
@@ -77,7 +77,7 @@ function selectSavedOption(id, variable) {
 /**
  * 
  */
-function changeTask(i) {
+async function changeTask(i) {
     tasks[i].title = document.getElementById('change-task-title').value;
     tasks[i].category = document.getElementById('change-task-category').value;
     tasks[i].description = document.getElementById('change-task-description').value;
@@ -92,7 +92,7 @@ function changeTask(i) {
 /**
  * This function allows you to edit a backlog-item after create
  */
-function deleteTask(i) {
+async function deleteTask(i) {
     tasks.splice(i, 1);
     updateBacklog();
 }
@@ -114,8 +114,8 @@ function closeDialog() {
 /**
  * 
  */
-function updateBacklog() {
-    saveToBackend();
+async function updateBacklog() {
+    await saveToBackend();
     closeDialog();
     showBacklog();
 }
