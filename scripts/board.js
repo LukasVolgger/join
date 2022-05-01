@@ -67,10 +67,10 @@ function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function moveTo(processingState) {
+async function moveTo(processingState) {
     tasks.find(t => t.creation_date === currentDraggedElement).processing_state = processingState;
-    saveToBackend();
     updateHTML();
+    await saveToBackend();
 }
 
 
