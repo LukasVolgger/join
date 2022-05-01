@@ -24,20 +24,20 @@ async function init() {
 /**
  * Converts the global arrays into strings and saves them on the backend
  */
-function saveToBackend() {
+async function saveToBackend() {
     let usersAsJSON = JSON.stringify(users);
     let tasksAsJSON = JSON.stringify(tasks);
-    backend.setItem('users', usersAsJSON);
-    backend.setItem('tasks', tasksAsJSON);
+    await backend.setItem('users', usersAsJSON);
+    await backend.setItem('tasks', tasksAsJSON);
 }
 
 
 /**
  * Loads the saved strings from the backend. The strings are converted again and assigned to the arrays
  */
-function loadFromBackend() {
-    let usersAsJSON = backend.getItem('users');
-    let tasksAsJSON = backend.getItem('tasks');
+async function loadFromBackend() {
+    let usersAsJSON = await backend.getItem('users');
+    let tasksAsJSON = await backend.getItem('tasks');
     users = JSON.parse(usersAsJSON) || [];
     tasks = JSON.parse(tasksAsJSON) || [];
 }

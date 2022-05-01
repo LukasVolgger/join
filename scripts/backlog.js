@@ -26,7 +26,7 @@ function createBacklogItem() {
     let content = document.getElementById('backlog-content');
     for (let i = 0; i < tasks.length; i++) {
         if (tasks[i].processing_state == 'unallocated') {
-            content.innerHTML += templateBacklogItem(i, tasks[i]);
+            content.innerHTML += templateBacklogItem(i);
         }
     }
 }
@@ -39,11 +39,11 @@ function showTask(i) {
 
 
 /**
- * This function allows you to edit a backlog-item after create
+ * This function allows you to move an item to the board
  */
 async function moveToBoard(i) {
     tasks[i].processing_state = 'todo';
-    updateBacklog();
+    await updateBacklog();
 }
 
 
