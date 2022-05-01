@@ -39,6 +39,10 @@
     padding-top: 5px;
 }
 
+.drag-area-highlight {
+    background-color: #e8e5f8;
+}
+
 
 /* Drag and Drop */
 

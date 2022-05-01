@@ -15,8 +15,7 @@ let currentDraggedElement;
 function updateHTML() {
 
     // To Do
-    let todo = tasks.filter(t => t['processing_state'] == 'todo');
-    // let todo = tasks.filter(t => t['processing-state'] == 'todo');
+    let todo = tasks.filter(t => t.processing_state == 'todo');
 
     document.getElementById('todo').innerHTML = '';
 
@@ -26,7 +25,7 @@ function updateHTML() {
     }
 
     // In Progress
-    let inProgress = tasks.filter(t => t['processing_state'] == 'inProgress');
+    let inProgress = tasks.filter(t => t.processing_state == 'inProgress');
 
     document.getElementById('inProgress').innerHTML = '';
 
@@ -34,8 +33,9 @@ function updateHTML() {
         const element = inProgress[index];
         document.getElementById('inProgress').innerHTML += generateTodoHTML(element);
     }
+
     //Testing
-    let testing = tasks.filter(t => t['processing_state'] == 'testing');
+    let testing = tasks.filter(t => t.processing_state == 'testing');
 
     document.getElementById('testing').innerHTML = '';
 
@@ -43,8 +43,9 @@ function updateHTML() {
         const element = testing[index];
         document.getElementById('testing').innerHTML += generateTodoHTML(element);
     }
+
     // Done
-    let done = tasks.filter(t => t['processing_state'] == 'done');
+    let done = tasks.filter(t => t.processing_state == 'done');
 
     document.getElementById('done').innerHTML = '';
 
@@ -54,12 +55,12 @@ function updateHTML() {
     }
 }
 
-function startDragging(id) {
-    currentDraggedElement = id;
+function startDragging(creation_date) {
+    currentDraggedElement = creation_date;
 }
 
 function generateTodoHTML(element) {
-    return `<div draggable="true" ondragstart="startDragging(${element.id})" class="board-item" onclick="showBoardTask(${element.id})">${element.title}<br><b>Due Date: </b>${element.due_date}</div>`;
+    return `<div draggable="true" ondragstart="startDragging(${element.creation_date})" class="board-item" onclick="showBoardTask(${element.creation_date})">${element.title}<br><b>Due Date: </b>${element.due_date}</div>`;
 }
 
 function allowDrop(ev) {
@@ -67,7 +68,7 @@ function allowDrop(ev) {
 }
 
 function moveTo(processingState) {
-    tasks[currentDraggedElement]['processing_state'] = processingState;
+    tasks.find(t => t.creation_date === currentDraggedElement).processing_state = processingState;
     saveToBackend();
     updateHTML();
 }
@@ -77,10 +78,10 @@ function hightlight(id) {
     document.getElementById(id).classList.add('drag-area-highlight');
 }
 
-function removeHighLight(id) {
+function removeHighlight(id) {
     document.getElementById(id).classList.remove('drag-area-highlight');
 }
 
 function showBoardTask(id) {
-    
+
 }
