@@ -15,7 +15,8 @@ let currentDraggedElement;
 function updateHTML() {
 
     // To Do
-    let todo = tasks.filter(t => t['processing-state'] == 'todo');
+    let todo = tasks.filter(t => t['processing_state'] == 'todo');
+    // let todo = tasks.filter(t => t['processing-state'] == 'todo');
 
     document.getElementById('todo').innerHTML = '';
 
@@ -25,7 +26,7 @@ function updateHTML() {
     }
 
     // In Progress
-    let inProgress = tasks.filter(t => t['processing-state'] == 'inProgress');
+    let inProgress = tasks.filter(t => t['processing_state'] == 'inProgress');
 
     document.getElementById('inProgress').innerHTML = '';
 
@@ -34,7 +35,7 @@ function updateHTML() {
         document.getElementById('inProgress').innerHTML += generateTodoHTML(element);
     }
     //Testing
-    let testing = tasks.filter(t => t['processing-state'] == 'testing');
+    let testing = tasks.filter(t => t['processing_state'] == 'testing');
 
     document.getElementById('testing').innerHTML = '';
 
@@ -43,7 +44,7 @@ function updateHTML() {
         document.getElementById('testing').innerHTML += generateTodoHTML(element);
     }
     // Done
-    let done = tasks.filter(t => t['processing-state'] == 'done');
+    let done = tasks.filter(t => t['processing_state'] == 'done');
 
     document.getElementById('done').innerHTML = '';
 
@@ -58,15 +59,16 @@ function startDragging(id) {
 }
 
 function generateTodoHTML(element) {
-    return `<div draggable="true" ondragstart="startDragging(${element.id})" style"width: 50px; height: 20px; backgroundcolor: black"; color: white;>${element.title}</div>`;
+    return `<div draggable="true" ondragstart="startDragging(${element.id})" class="board-item" onclick="showBoardTask(${element.id})">${element.title}<br><b>Due Date: </b>${element.due_date}</div>`;
 }
 
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
-function moveTo(category) {
-    todos[currentDraggedElement]['processing-state'] = category;
+function moveTo(processingState) {
+    tasks[currentDraggedElement]['processing_state'] = processingState;
+    saveToBackend();
     updateHTML();
 }
 
@@ -77,4 +79,8 @@ function hightlight(id) {
 
 function removeHighLight(id) {
     document.getElementById(id).classList.remove('drag-area-highlight');
+}
+
+function showBoardTask(id) {
+    
 }

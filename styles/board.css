@@ -42,13 +42,14 @@
 
 /* Drag and Drop */
 
-.todo {
+.board-item {
     border-style: solid;
-    border-width: 4px;
+    border-width: 2px;
     margin: 15px auto;
-    border-radius: 5px;
-    padding-left: 5px;
+    border-radius: 8px;
+    padding: 4px 8px;
     background-color: white;
+    text-align: center;
 }
 
 .drag-area {

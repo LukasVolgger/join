@@ -20,6 +20,7 @@ function addTask() {
             'due_date': `${dueDate.value}`,
             'urgency': `${urgency.value}`,
             'assigned_to': `${assignedTo.value}`,
+            'id': idGenerator(),
             'processing_state': 'unallocated',
             'creation_date': new Date().getTime()
         };
@@ -42,4 +43,15 @@ function resetUserInput() {
     document.getElementById('task-due-date').value = '';
     document.getElementById('task-urgency').value = '';
     document.getElementById('task-assigned-to').value = '';
+}
+
+function idGenerator() {
+    let nextId;
+    if (tasks.length > 0) {
+        nextId = tasks[tasks.length-1].id + 1;
+    }
+    else {
+        nextId = 0;
+    }
+    return nextId;
 }

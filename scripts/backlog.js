@@ -127,14 +127,14 @@ function updateBacklog() {
 function templateBacklogItem(i) {
     return `
         <div class="backlog-item ${tasks[i].category}" id="backlog-item-${i}" onclick="showTask(${i})">
-            <div class="backlog-item-assigned">
+            <div class="person">
                 <img class="rounded-circle profile-picture" src="../imgs/pp_${tasks[i].assigned_to}.jfif" alt="">
                 <div class="person-name">
                     <span>${tasks[i].assigned_to}</span>
                     <span style="color: #6f8bf3f7">${tasks[i].assigned_to}@join.com</span>
                 </div>
             </div>
-            <div class="backlog-item-category"> ${tasks[i].category} </div>
+            <div> ${tasks[i].category} </div>
             <div class="backlog-item-description">${tasks[i].description}</div>
         </div>
     `;
