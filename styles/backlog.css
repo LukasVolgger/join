@@ -65,6 +65,20 @@ a {
     width: 292px;
 }
 
+.mobile-only-backlog {
+    color: #1E3190;
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.assigned-to {
+    display: flex;
+}
+
+.person {
+    display: flex;
+}
+
 .person-name {
     display: flex;
     flex-direction: column;
@@ -135,18 +149,16 @@ a {
 }
 
 .dialog-task {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     position: relative;
-    min-height: 260px;
-    width: 450px;
-    padding: 12px;
-    border-style: solid;
-    border-width: 8px;
+    gap: 16px;
+    padding: 16px;
+    /* border-style: solid;
+    border-width: 8px; */
     border-radius: 8px;
     background-color: #f4f3fb;
-}
-
-.task-title-container {
-    width: 158px;
 }
 
 .task-footer {
@@ -163,6 +175,7 @@ a {
 }
 
 .description {
+    word-break: break-word;
     overflow: hidden;
     white-space: pre-wrap;
     margin-bottom: 36px;
@@ -180,6 +193,7 @@ a {
 .task-header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .task-title {
@@ -189,9 +203,10 @@ a {
 }
 
 .task-settings {
-    margin-top: 16px;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 16px;
 }
 
 .fa-xmark {
@@ -206,10 +221,11 @@ a {
     position: absolute;
     cursor: pointer;
     font-size: 22px;
+    color: #1E3190;
 }
 
 .fa-solid:hover {
-    color: rgba(0, 0, 0, 0.562)
+    color: #ee6002;
 }
 
 .fa-file-circle-plus {
@@ -242,6 +258,9 @@ a {
     .hide-mobile {
         display: none;
     }
+    .mobile-only-backlog {
+        display: flex;
+    }
     .border-spacing {
         padding-top: 64px;
         padding-bottom: 54px;
@@ -267,6 +286,9 @@ a {
     .backlog-container {
         margin-top: 0;
     }
+    .dialog-task {
+        width: 90vw;
+    }
 }
 
 
@@ -275,6 +297,9 @@ a {
 @media only screen and (min-width: 360px) {
     .hide-mobile {
         display: none;
+    }
+    .mobile-only-backlog {
+        display: flex;
     }
     .border-spacing {
         padding-top: 64px;
@@ -297,6 +322,16 @@ a {
     }
     .backlog-container {
         margin-top: 0;
+    }
+    .backlog-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .backlog-item-assigned {
+        width: unset;
+    }
+    .dialog-task {
+        width: 90vw;
     }
 }
 
@@ -326,12 +361,19 @@ a {
     .right-container {
         margin-left: 200px;
     }
+    .backlog-item-assigned {
+        width: unset;
+    }
 }
 
 
 /* Medium devices (landscape tablets, 768px and up) */
 
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+    .dialog-task {
+        width: 65vw;
+    }
+}
 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -340,8 +382,21 @@ a {
     .hide-mobile {
         display: flex;
     }
+    .mobile-only-backlog {
+        display: none;
+    }
+    .backlog-item {
+        flex-direction: row;
+        align-items: center;
+    }
+    .backlog-item-assigned {
+        width: 292px;
+    }
     .backlog-container {
         margin-top: 32px;
+    }
+    .dialog-task {
+        width: 550px;
     }
 }
 
