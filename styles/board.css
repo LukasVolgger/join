@@ -54,6 +54,7 @@
     padding: 4px 8px;
     background-color: white;
     text-align: center;
+    cursor: pointer;
 }
 
 .drag-area {

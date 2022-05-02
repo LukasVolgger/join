@@ -56,7 +56,7 @@ a {
 }
 
 .backlog-item:hover {
-    background-color: #e8e5f1;
+    background-color: #e8e5f8;
 }
 
 .backlog-item-assigned {
@@ -68,33 +68,6 @@ a {
 .mobile-only-backlog {
     color: #1E3190;
     font-weight: 600;
-    margin-right: 8px;
-}
-
-.assigned-to {
-    display: flex;
-}
-
-.person {
-    display: flex;
-}
-
-.person-name {
-    display: flex;
-    flex-direction: column;
-}
-
-.person-name span {
-    width: 192px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.profile-picture {
-    height: 48px;
-    width: 48px;
-    object-fit: cover;
     margin-right: 8px;
 }
 
@@ -128,127 +101,6 @@ a {
 
 .category_3 {
     border-color: green;
-}
-
-.dialog-bg {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background-color: rgba(0, 0, 0, 0.75);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.dialog {
-    background-color: white;
-    border-radius: 8px;
-}
-
-.dialog-task {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    position: relative;
-    gap: 16px;
-    padding: 16px;
-    /* border-style: solid;
-    border-width: 8px; */
-    border-radius: 8px;
-    background-color: #f4f3fb;
-}
-
-.task-footer {
-    display: flex;
-    justify-content: space-between;
-}
-
-.left-task-footer {
-    padding-right: 24px;
-}
-
-.task-description {
-    margin-top: 16px;
-}
-
-.description {
-    word-break: break-word;
-    overflow: hidden;
-    white-space: pre-wrap;
-    margin-bottom: 36px;
-}
-
-.selection-dialog {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 36px;
-}
-
-.task-header {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-.task-title {
-    overflow: hidden;
-    white-space: pre-wrap;
-    text-overflow: ellipsis;
-}
-
-.task-settings {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 16px;
-}
-
-.fa-xmark {
-    position: absolute;
-    right: 14px;
-    top: 10px;
-    font-size: 28px;
-    cursor: pointer;
-}
-
-.fa-solid {
-    position: absolute;
-    cursor: pointer;
-    font-size: 22px;
-    color: #1E3190;
-}
-
-.fa-solid:hover {
-    color: #ee6002;
-}
-
-.fa-file-circle-plus {
-    right: 88px;
-    bottom: 20px;
-}
-
-.fa-pen-to-square {
-    right: 54px;
-    bottom: 20px;
-}
-
-.fa-trash-can {
-    right: 20px;
-    bottom: 20px;
-}
-
-.edit-dialog {
-    position: relative;
-}
-
-.edit-dialog .add-task-form {
-    margin-top: 0;
 }
 
 
@@ -285,9 +137,6 @@ a {
     }
     .backlog-container {
         margin-top: 0;
-    }
-    .dialog-task {
-        width: 90vw;
     }
 }
 
@@ -330,9 +179,6 @@ a {
     .backlog-item-assigned {
         width: unset;
     }
-    .dialog-task {
-        width: 90vw;
-    }
 }
 
 
@@ -370,9 +216,7 @@ a {
 /* Medium devices (landscape tablets, 768px and up) */
 
 @media only screen and (min-width: 768px) {
-    .dialog-task {
-        width: 65vw;
-    }
+
 }
 
 
@@ -394,9 +238,6 @@ a {
     }
     .backlog-container {
         margin-top: 32px;
-    }
-    .dialog-task {
-        width: 550px;
     }
 }
 

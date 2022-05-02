@@ -41,3 +41,31 @@ async function loadFromBackend() {
     users = JSON.parse(usersAsJSON) || [];
     tasks = JSON.parse(tasksAsJSON) || [];
 }
+
+
+/**
+ * This function open a Dialog-Window with display: none
+ */
+function openDialog(id) {
+    document.getElementById(id).classList.remove('d-none');
+}
+
+
+/**
+ * This function close a Dialog-Window with display: none
+ */
+function closeDialog(id) {
+    document.getElementById(id).classList.add('d-none');
+}
+
+
+/**
+ * 
+ */
+ function selectSavedOption(id, variable) {
+    Array.from(document.querySelector(id).options).forEach(function(option_element) {
+        if (option_element.value == variable) {
+            option_element.selected = true;
+        }
+    });
+}
