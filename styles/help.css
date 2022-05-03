@@ -1,32 +1,29 @@
-.container p {
-    color: blue;
-    font-weight: 600;
-}
-
 ol {
     list-style: none;
     counter-reset: item;
 }
 
 li {
+    display: flex;
     counter-increment: item;
     margin-bottom: 5px;
     margin-top: 20px;
     font-size: 18px;
-    font-weight: 600;
 }
 
 li:before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: 10px;
     content: counter(item);
     background: #4B5AA6;
     border-radius: 50%;
     color: white;
     width: 1.2em;
+    height: 1.2em;
     text-align: center;
-    display: inline-block;
 }
-
 
 
 /* Extra extra small devices (phones, 360px and down) */
