@@ -68,7 +68,8 @@ a {
 .mobile-only-backlog {
     color: #1E3190;
     font-weight: 600;
-    margin-right: 8px;
+    margin-right: 16px;
+    width: 100px;
 }
 
 .assigned-to {
@@ -112,8 +113,7 @@ a {
     overflow: hidden;
 }
 
-.backlog-item-category,
-.backlog-item-description {
+.backlog-item-category {
     word-break: break-all;
     width: 308px;
 }
@@ -155,8 +155,6 @@ a {
     position: relative;
     gap: 16px;
     padding: 16px;
-    /* border-style: solid;
-    border-width: 8px; */
     border-radius: 8px;
     background-color: #f4f3fb;
 }
@@ -260,6 +258,8 @@ a {
     }
     .mobile-only-backlog {
         display: flex;
+        margin-right: 0;
+        width: unset;
     }
     .border-spacing {
         padding-top: 64px;
@@ -288,6 +288,21 @@ a {
     }
     .dialog-task {
         width: 90vw;
+    }
+    .backlog-item {
+        gap: 16px;
+        justify-content: center;
+    }
+    .backlog-item-assigned,
+    .backlog-item-category,
+    .backlog-item-description {
+        flex-direction: column;
+        text-align: center;
+    }
+    .person {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 }
 
