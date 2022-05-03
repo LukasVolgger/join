@@ -103,7 +103,6 @@ a {
     border-color: green;
 }
 
-<<<<<<< HEAD
 .dialog-bg {
     position: fixed;
     top: 0;
@@ -223,8 +222,6 @@ a {
     margin-top: 0;
 }
 
-=======
->>>>>>> 94f80b4e2022bf02cd49fbdc818496431a68d35b
 
 /* Extra extra small devices (phones, 360px and down) */
 
@@ -262,7 +259,6 @@ a {
     .backlog-container {
         margin-top: 0;
     }
-<<<<<<< HEAD
     .dialog-task {
         width: 90vw;
     }
@@ -281,8 +277,6 @@ a {
         align-items: center;
         text-align: center;
     }
-=======
->>>>>>> 94f80b4e2022bf02cd49fbdc818496431a68d35b
 }
 
 
@@ -360,9 +354,7 @@ a {
 
 /* Medium devices (landscape tablets, 768px and up) */
 
-@media only screen and (min-width: 768px) {
-
-}
+@media only screen and (min-width: 768px) {}
 
 
 /* Large devices (laptops/desktops, 992px and up) */
