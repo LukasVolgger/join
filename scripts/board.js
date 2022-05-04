@@ -12,7 +12,7 @@ let currentDraggedElement;
 
 
 /**
- * Initialize needed functions for Board.html
+ * Initialize needed functions for board.html
  */
 async function init() {
     includeHTML();

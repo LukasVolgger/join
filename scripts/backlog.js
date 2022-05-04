@@ -1,5 +1,9 @@
 'use strict';
 
+
+/**
+ * Initialize needed functions for backlog.html
+ */
 async function init() {
     includeHTML();
     await downloadFromServer();
@@ -10,20 +14,11 @@ async function init() {
 
 
 /**
- * Show all unallocated Objects from Server
+ * Show all unallocated Tasks
  */
 function showBacklog() {
     let content = document.getElementById('backlog-content');
     content.innerHTML = '';
-    createBacklogItem();
-}
-
-
-/**
- * Create a Backlog-item
- */
-function createBacklogItem() {
-    let content = document.getElementById('backlog-content');
     for (let i = 0; i < tasks.length; i++) {
         if (tasks[i].processing_state == 'unallocated') {
             content.innerHTML += templateBacklogItem(i);
@@ -32,6 +27,11 @@ function createBacklogItem() {
 }
 
 
+/**
+ * Shows all information of a task that is important for the user
+ * 
+ * @param {number} i - Passes the index of the task
+ */
 function showBacklogTask(i) {
     openDialog('dialog-bg-backlog');
     document.getElementById('dialog-content-backlog').innerHTML = templateBacklogTask(i);
@@ -39,7 +39,9 @@ function showBacklogTask(i) {
 
 
 /**
- * This function allows you to move an item to the board
+ * Allows you to move an item to the board by changing the processing status to todo
+ * 
+ * @param {number} i - Passes the index of the task to be changed
  */
 async function moveToBoard(i) {
     tasks[i].processing_state = 'todo';
@@ -48,7 +50,9 @@ async function moveToBoard(i) {
 
 
 /**
- * This function allows you to edit a task after create
+ * Allows changing an already existing task
+ * 
+ * @param {number} i - Passes the index of the task to be changed
  */
  function editBacklogTask(i) {
     document.getElementById('dialog-content-backlog').innerHTML = '';
@@ -63,7 +67,9 @@ async function moveToBoard(i) {
 
 
 /**
- * This function saves the changes made while editing
+ * Saves the changes made while editing
+ * 
+ * @param {number} i - Passes the index of the task to be changed
  */
 async function changeBacklogTask(i) {
     tasks[i].title = document.getElementById('change-backlog-title').value;
@@ -79,7 +85,9 @@ async function changeBacklogTask(i) {
 
 
 /**
- * This function allows you to edit a backlog-item after create
+ * Delete a Task
+ * 
+ * @param {number} i - Passes the index of the task to be changed
  */
  async function deleteBacklogTask(i) {
     tasks.splice(i, 1);
@@ -88,7 +96,7 @@ async function changeBacklogTask(i) {
 
 
 /**
- * 
+ * Updates the backlog after something has been changed
  */
  async function updateBacklog() {
     closeDialog('dialog-bg-backlog');
@@ -98,7 +106,10 @@ async function changeBacklogTask(i) {
 
 
 /**
- * This function generate HTML-Code for one Backlog-Item
+ * Generate dynamic HTML-Code for a backlog item
+ * 
+ * @param {number} i - Passes the index of the task which should be displayed
+ * @returns - Returns the customized HTML-Code
  */
  function templateBacklogItem(i) {
     return `
@@ -126,6 +137,12 @@ async function changeBacklogTask(i) {
 }
 
 
+/**
+ * Generate dynamic HTML-Code for a dialog window in which a task is displayed
+ * 
+ * @param {number} i - Passes the index of the task which should be displayed
+ * @returns - Returns the customized HTML-Code
+ */
 function templateBacklogTask(i) {
     return `
     <div class="dialog-task" id="backlog-item-${i}">
@@ -175,7 +192,10 @@ function templateBacklogTask(i) {
 
 
 /**
- * This function generate dynamic HTML-Code for the edit dialog
+ * Generate dynamic HTML-Code for a dialog window in which a task can be changed
+ * 
+ * @param {number} i - Passes the index of the task which should be displayed
+ * @returns - Returns the customized HTML-Code
  */
 function templateEditBacklogTask(i) {
     return `
