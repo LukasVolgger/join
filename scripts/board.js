@@ -135,9 +135,9 @@ function editBoardTask(i) {
     document.getElementById('change-board-title').value = tasks[i].title;
     document.getElementById('change-board-date').value = tasks[i].due_date;
     document.getElementById('change-board-description').value = tasks[i].description;
-    selectSavedOption('#change-board-category', tasks[i].category);
-    selectSavedOption('#change-board-urgency', tasks[i].urgency);
-    selectSavedOption('#change-board-assigned-to', tasks[i].assigned_to);
+    selectSavedOption('change-board-category', tasks[i].category);
+    selectSavedOption('change-board-urgency', tasks[i].urgency);
+    selectSavedOption('change-board-assigned-to', tasks[i].assigned_to);
 }
 
 

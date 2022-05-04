@@ -60,9 +60,9 @@ async function moveToBoard(i) {
     document.getElementById('change-backlog-title').value = tasks[i].title;
     document.getElementById('change-backlog-date').value = tasks[i].due_date;
     document.getElementById('change-backlog-description').value = tasks[i].description;
-    selectSavedOption('#change-backlog-category', tasks[i].category);
-    selectSavedOption('#change-backlog-urgency', tasks[i].urgency);
-    selectSavedOption('#change-backlog-assigned-to', tasks[i].assigned_to);
+    selectSavedOption('change-backlog-category', tasks[i].category);
+    selectSavedOption('change-backlog-urgency', tasks[i].urgency);
+    selectSavedOption('change-backlog-assigned-to', tasks[i].assigned_to);
 }
 
 

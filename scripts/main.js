@@ -1,6 +1,8 @@
 'use strict';
 
+
 // ####################################### GLOBAL SCOPE #######################################
+
 
 // Stores all task objects
 let users = [];
@@ -8,7 +10,9 @@ let tasks = [];
 
 setURL('http://gruppe-211.developerakademie.net/smallest_backend_ever');
 
+
 // ####################################### MAIN FUNCTIONS #######################################
+
 
 /**
  * Initialize needed functions
@@ -44,7 +48,9 @@ async function loadFromBackend() {
 
 
 /**
- * This function open a Dialog-Window with display: none
+ * Open a Dialog-Window
+ * 
+ * @param {string} id - Passes the html id of the dialog window
  */
 function openDialog(id) {
     document.getElementById(id).classList.remove('d-none');
@@ -52,7 +58,9 @@ function openDialog(id) {
 
 
 /**
- * This function close a Dialog-Window with display: none
+ * Close a Dialog-Window
+ * 
+ * @param {string} id - Passes the html id of the dialog window
  */
 function closeDialog(id) {
     document.getElementById(id).classList.add('d-none');
@@ -60,10 +68,13 @@ function closeDialog(id) {
 
 
 /**
+ * Sets a previously saved value of an option to selected
  * 
+ * @param {string} id - Passes the html id of the used option
+ * @param {*} variable - Passes the value which is saved as selected
  */
  function selectSavedOption(id, variable) {
-    Array.from(document.querySelector(id).options).forEach(function(option_element) {
+    Array.from(document.querySelector(`#${id}`).options).forEach(function(option_element) {
         if (option_element.value == variable) {
             option_element.selected = true;
         }
