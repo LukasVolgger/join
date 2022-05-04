@@ -63,6 +63,10 @@
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
+.board-item:hover {
+    background-color: rgb(240, 240, 240);
+}
+
 .board-item-header {
     font-weight: 600;
     color: #1E3190;
