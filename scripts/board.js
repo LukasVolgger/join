@@ -1,6 +1,19 @@
 'use strict';
 
 
+// ####################################### GLOBAL SCOPE #######################################
+
+
+// Stores the id of an item to be moved
+let currentDraggedElement;
+
+
+// ####################################### MAIN FUNCTIONS #######################################
+
+
+/**
+ * Initialize needed functions for Board.html
+ */
 async function init() {
     includeHTML();
     await downloadFromServer();
@@ -10,18 +23,23 @@ async function init() {
 }
 
 
-let currentDraggedElement;
-
-
+/**
+ * Displays the board by loading the different categories
+ */
 function showBoard() {
-    showColumn('todo');
-    showColumn('inProgress');
-    showColumn('testing');
-    showColumn('done');
+    showCategory('todo');
+    showCategory('inProgress');
+    showCategory('testing');
+    showCategory('done');
 }
 
 
-function showColumn(id) {
+/**
+ * Displays a category of the board by filtering all tasks by processing status
+ * 
+ * @param {string} id - Passes the id of the category to be displayed
+ */
+function showCategory(id) {
     let category = tasks.filter(t => t.processing_state == id);
     document.getElementById(id).innerHTML = '';
     for (let i = 0; i < category.length; i++) {
@@ -31,16 +49,31 @@ function showColumn(id) {
 }
 
 
-function startDragging(creation_date) {
-    currentDraggedElement = creation_date;
+/**
+ * When you start dragging an element, writes its id to the currentDraggedElement variable
+ * 
+ * @param {number} creationDate - Passes the creation date in the form of an integer as the unique id of an element
+ */
+function startDragging(creationDate) {
+    currentDraggedElement = creationDate;
 }
 
 
+/**
+ * Prevent the element from being handled by default in order to allow a Drop
+ * 
+ * @param {*} ev - Passes the current event to the function
+ */
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
 
+/**
+ * Saves the new processing status in the backend after dropping an element into the respective field in the HTML file
+ * 
+ * @param {string} processingState - passes the category of the HTML region over which the element was dropped
+ */
 async function moveTo(processingState) {
     tasks.find(t => t.creation_date === currentDraggedElement).processing_state = processingState;
     updateBoard();
@@ -48,16 +81,31 @@ async function moveTo(processingState) {
 }
 
 
+/**
+ * Highlight the HTML area over which the element is currently being dragged
+ * 
+ * @param {string} id - Passes the HTML-ID of the Area
+ */
 function hightlight(id) {
     document.getElementById(id).classList.add('drag-area-highlight');
 }
 
 
+/**
+ * Removes the highlighting of the HTML area 
+ * 
+ * @param {string} id - Passes the HTML-ID of the Area
+ */
 function removeHighlight(id) {
     document.getElementById(id).classList.remove('drag-area-highlight');
 }
 
 
+/**
+ * Shows all information of a task that is important for the user
+ * 
+ * @param {number} creationDate - Passes the creation date in the form of an integer as the unique id of an element
+ */
 function showBoardTask(creationDate) {
     openDialog('dialog-bg-board');
     let i = tasks.findIndex(t => t.creation_date == creationDate);
@@ -65,6 +113,11 @@ function showBoardTask(creationDate) {
 }
 
 
+/**
+ * Removes a task from the board by setting the processing status to unallocated
+ * 
+ * @param {number} i - Passes the index of the task to be changed
+ */
 async function removeFromBoard(i) {
     tasks[i].processing_state = 'unallocated';
     await updateBoard();
@@ -72,7 +125,9 @@ async function removeFromBoard(i) {
 
 
 /**
- * This function allows you to edit a task after create
+ * Allows changing an already existing task
+ * 
+ * @param {number} i - Passes the index of the task to be changed
  */
 function editBoardTask(i) {
     document.getElementById('dialog-content-board').innerHTML = '';
@@ -87,7 +142,9 @@ function editBoardTask(i) {
 
 
 /**
- * This function saves the changes made while editing
+ * Saves the changes made while editing
+ * 
+ * @param {number} i - Passes the index of the task to be changed
  */
 async function changeBoardTask(i) {
     tasks[i].title = document.getElementById('change-board-title').value;
@@ -101,20 +158,34 @@ async function changeBoardTask(i) {
     await saveToBackend();
 }
 
+
 /**
- * This function allows you to edit a backlog-item after create
+ * Delete a Task
+ * 
+ * @param {number} i - Passes the index of the task to be changed
  */
 async function deleteBoardTask(i) {
     tasks.splice(i, 1);
     await updateBoard();
 }
 
+
+/**
+ * Updates the board after something has been changed
+ */
 async function updateBoard() {
     closeDialog('dialog-bg-board');
     showBoard();
     await saveToBackend();
 }
 
+
+/**
+ * Generate dynamic HTML-Code for a board item
+ * 
+ * @param {object} task - Passes a task in the form of an object
+ * @returns - Returns the customized HTML-Code
+ */
 function templateBoardItem(task) {
     return `
         <div draggable="true" ondragstart="startDragging(${task.creation_date})" class="board-item" onclick="showBoardTask(${task.creation_date})">
@@ -131,6 +202,12 @@ function templateBoardItem(task) {
 }
 
 
+/**
+ * Generate dynamic HTML-Code for a dialog window in which a task is displayed
+ * 
+ * @param {number} i - Passes the index of the task which should be displayed
+ * @returns - Returns the customized HTML-Code
+ */
 function templateBoardTask(i) {
     return `
     <div class="dialog-task" id="board-item-${i}">
@@ -180,7 +257,10 @@ function templateBoardTask(i) {
 
 
 /**
- * This function generate dynamic HTML-Code for the edit dialog
+ * Generate dynamic HTML-Code for a dialog window in which a task can be changed
+ * 
+ * @param {number} i - Passes the index of the task which should be displayed
+ * @returns - Returns the customized HTML-Code
  */
 function templateEditBoardTask(i) {
     return `

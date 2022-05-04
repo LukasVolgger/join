@@ -16,7 +16,7 @@
 
 - [X] Backlog 
 - [X] Help
-- [ ] Board
+- [X] Board
 - [ ] Refactoring
 
 <h3>Lukas</h3>
