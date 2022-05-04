@@ -104,7 +104,7 @@ async function changeBoardTask(i) {
 /**
  * This function allows you to edit a backlog-item after create
  */
- async function deleteBoardTask(i) {
+async function deleteBoardTask(i) {
     tasks.splice(i, 1);
     await updateBoard();
 }
@@ -118,7 +118,14 @@ async function updateBoard() {
 function templateBoardItem(task) {
     return `
         <div draggable="true" ondragstart="startDragging(${task.creation_date})" class="board-item" onclick="showBoardTask(${task.creation_date})">
-            ${task.title}<br><b>Due Date: </b>${task.due_date}
+            <div class="board-item-section">
+                <span class="board-item-header">TITLE:</span>
+                <span class="board-item-title">${task.title}</span>
+            </div>
+            <div class="board-item-section">
+                <span class="board-item-header">DUE DATE:</span> 
+                <span>${task.due_date}</span>
+            </div>
         </div>
     `;
 }

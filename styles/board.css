@@ -21,7 +21,6 @@
 .border-col {
     flex: 1;
     min-width: 200px;
-    height: 100%;
 }
 
 .border-title {
@@ -34,10 +33,12 @@
 }
 
 .border-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     background-color: #F4F3FB;
-    /* height: 93%; */
     min-height: 200px;
-    padding: 8px;
+    padding: 16px;
     border-radius: 8px;
 }
 
@@ -49,13 +50,34 @@
 /* Drag and Drop */
 
 .board-item {
-    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    max-height: 180px;
     border-radius: 8px;
     padding: 4px 8px;
     background-color: white;
-    text-align: center;
-    cursor: move;
+    cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.board-item-header {
+    font-weight: 600;
+    color: #1E3190;
+}
+
+.board-item-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.board-item-title {
+    overflow: hidden;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
 }
 
 .drag-area {
