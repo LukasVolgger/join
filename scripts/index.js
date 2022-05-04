@@ -1,5 +1,6 @@
 'use strict';
 
+
 /**
  * Gets the user input and creates an object 
  */
@@ -35,6 +36,10 @@ async function addTask() {
     }
 }
 
+
+/**
+ * Resets the user input by replacing the value with an empty string
+ */
 function resetUserInput() {
     document.getElementById('task-title').value = '';
     document.getElementById('task-category').value = '';
