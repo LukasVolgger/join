@@ -4,14 +4,20 @@
 
 <h3>Not assigned yet</h3>
 
-- [ ] Help
 - [ ] Js Doc
+
+
+<h3>Samir</h3>
+
+- [X] Help
 - [ ] Refactoring
 
 <h3>Samuel</h3>
 
 - [X] Backlog 
+- [X] Help
 - [ ] Board
+- [ ] Refactoring
 
 <h3>Lukas</h3>
 
@@ -21,4 +27,4 @@
 - [X] About
 - [X] User login
 - [X] Mobile Menu
-- [ ] Responsive Webdesign
+- [X] Responsive Webdesign

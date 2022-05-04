@@ -25,6 +25,13 @@ a {
     text-decoration: none;
 }
 
+.mobile-only-backlog {
+    color: #1E3190;
+    font-weight: 600;
+    margin-right: 16px;
+    width: 100px;
+}
+
 .backlog-container {
     margin-top: 32px;
 }
@@ -36,16 +43,21 @@ a {
     color: #1E3190;
 }
 
-.backlog-headline-person,
-.backlog-headline-category,
-.backlog-headline-description {
+.backlog-headline-person {
     width: 308px;
+}
+
+.backlog-headline-category {
+    width: 200px;
+}
+
+.backlog-headline-description {
+    max-width: 300px;
 }
 
 .backlog-item {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
     border-left: solid 8px;
     margin: 16px 0;
     padding: 8px;
@@ -65,30 +77,21 @@ a {
     width: 292px;
 }
 
-.mobile-only-backlog {
-    color: #1E3190;
-    font-weight: 600;
-    margin-right: 16px;
-    width: 100px;
-}
-
 .backlog-item-category {
     display: flex;
     align-items: center;
     min-height: 48px;
+    word-break: break-all;
+    width: 200px;
 }
 
 .backlog-item-description {
     display: flex;
     align-items: center;
-    min-height: 48px;
     white-space: pre-wrap;
     overflow: hidden;
-}
-
-.backlog-item-category {
-    word-break: break-all;
-    width: 308px;
+    /* max-width: 280px; */
+    min-height: 48px;
 }
 
 .category_1 {
@@ -265,12 +268,14 @@ a {
     .backlog-item {
         gap: 16px;
         justify-content: center;
+        flex-wrap: wrap;
     }
     .backlog-item-assigned,
     .backlog-item-category,
     .backlog-item-description {
         flex-direction: column;
         text-align: center;
+        width: 100%;
     }
     .person {
         flex-direction: column;
@@ -314,9 +319,12 @@ a {
     .backlog-item {
         flex-direction: column;
         align-items: flex-start;
+        flex-wrap: wrap;
     }
-    .backlog-item-assigned {
-        width: unset;
+    .backlog-item-assigned,
+    .backlog-item-category,
+    .backlog-item-description {
+        width: 100%;
     }
 }
 
@@ -369,9 +377,18 @@ a {
     .backlog-item {
         flex-direction: row;
         align-items: center;
+        flex-wrap: nowrap;
     }
     .backlog-item-assigned {
         width: 292px;
+        min-width: 292px;
+    }
+    .backlog-item-category {
+        width: 200px;
+        min-width: 200px;
+    }
+    .backlog-item-description {
+        max-width: 500px;
     }
     .backlog-container {
         margin-top: 32px;
