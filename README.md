@@ -2,22 +2,19 @@
 
 <h2>Tasklist</h2>
 
-<h3>Not assigned yet</h3>
-
-- [ ] Js Doc
-
+- [ ] Generate JSDoc output
 
 <h3>Samir</h3>
 
 - [X] Help
-- [ ] Refactoring
 
 <h3>Samuel</h3>
 
 - [X] Backlog 
 - [X] Help
 - [X] Board
-- [ ] Refactoring
+- [X] JsDoc
+- [X] Refactoring
 
 <h3>Lukas</h3>
 
@@ -28,3 +25,5 @@
 - [X] User login
 - [X] Mobile Menu
 - [X] Responsive Webdesign
+- [X] Refactoring
+- [X] JsDoc
