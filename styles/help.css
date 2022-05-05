@@ -5,24 +5,37 @@ ol {
 
 li {
     display: flex;
+    align-items: center;
     counter-increment: item;
     margin-bottom: 5px;
     margin-top: 20px;
     font-size: 18px;
+    background-color: rgb(255 244 0 / 50%);
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 16px;
 }
 
 li:before {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
+    margin-right: 12px;
+    padding: 12px;
     content: counter(item);
     background: #4B5AA6;
     border-radius: 50%;
     color: white;
     width: 1.2em;
     height: 1.2em;
+    min-width: 1.2em;
+    min-height: 1.2em;
     text-align: center;
+}
+
+.help-img {
+    width: 100%;
+    border-radius: 8px;
 }
 
 

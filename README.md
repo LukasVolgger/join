@@ -27,3 +27,4 @@
 - [X] Responsive Webdesign
 - [X] Refactoring
 - [X] JsDoc
+- [X] Help
