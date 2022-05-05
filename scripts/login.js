@@ -62,9 +62,9 @@ function loginOrCreateAccount() {
     const encrypted_username = crypt("salt", username);
     const encrypted_password = crypt("salt", password);
 
-    console.log('Create new account: ' + createAccount);
-    console.log('Encrypted username: ' + encrypted_username);
-    console.log('Encrypted password: ' + encrypted_password);
+    // console.log('Create new account: ' + createAccount);
+    // console.log('Encrypted username: ' + encrypted_username);
+    // console.log('Encrypted password: ' + encrypted_password);
 
     let user = {
         'username': encrypted_username,
@@ -74,13 +74,13 @@ function loginOrCreateAccount() {
 
     // Either create new user account if the checkbox is checked or login as existing user
     if (username && password && createAccount) {
-        console.log('run => createUserAccount()');
+        // console.log('run => createUserAccount()');
         // Confirm account creation
         if (window.confirm('Are you sure that you wan\'t to create this account?')) {
             createUserAccount(user);
         }
     } else {
-        console.log('run => loginUserAccount()');
+        // console.log('run => loginUserAccount()');
         loginUserAccount(user);
     }
 }
@@ -101,10 +101,10 @@ function createUserAccount(user) {
     }
 
     if (userAlreadyExists) {
-        console.log('User already exists!');
+        // console.log('User already exists!');
         loginErrorMessage('This user already exists!');
     } else {
-        console.log('User is free!');
+        // console.log('User is free!');
         users.push(user);
         saveToBackend();
         accountSuccessfullyCreated();
@@ -118,7 +118,7 @@ function createUserAccount(user) {
 function loginUserAccount(user) {
     // First check if there are any users. If none have been created yet, display an error message
     if (users.length < 1) {
-        console.log('This user does not exist!');
+        // console.log('This user does not exist!');
         loginErrorMessage('This user does not exist!');
 
         document.getElementById('password').value = '';
@@ -145,7 +145,7 @@ function loginUserAccount(user) {
  */
 function accountSuccessfullyCreated() {
     let loginContainer = document.getElementById('login-form');
-    console.log('Account successfully created!');
+    // console.log('Account successfully created!');
     document.getElementById('login-messages').classList.remove('d-none');
     loginContainer.innerHTML = accountSuccessfullyCreatedMessage();
 }
@@ -154,7 +154,7 @@ function accountSuccessfullyCreated() {
  * Shows the user a message that the login was successful
  */
 function loginSuccessful() {
-    console.log('Login successful!');
+    // console.log('Login successful!');
     document.getElementById('login-messages').classList.remove('d-none');
     loginSuccessfulMessage();
 }
@@ -169,7 +169,7 @@ function loginNotSuccessful(user) {
     for (let i = 0; i < users.length; i++) {
         // Username exists - Password was entered incorrectly
         if (user.username == users[i].username) {
-            console.log('Incorrect password!');
+            // console.log('Incorrect password!');
             loginErrorMessage('Incorrect password!');
 
             document.getElementById('password').value = '';
@@ -177,7 +177,7 @@ function loginNotSuccessful(user) {
             break;
             // Username doesn't exist
         } else {
-            console.log('This user does not exist!');
+            // console.log('This user does not exist!');
             document.getElementById('login-messages').classList.remove('d-none');
             loginErrorMessage('This user does not exist!');
 

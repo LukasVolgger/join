@@ -25,7 +25,7 @@ async function addTask() {
             'creation_date': new Date().getTime()
         };
 
-        console.log(task);
+        // console.log(task);
         tasks.push(task);
 
         await saveToBackend();
