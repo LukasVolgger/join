@@ -12,11 +12,11 @@ async function initLogin() {
 }
 
 /**
- * Encryption function of username and password
+ * Encryption of username and password
  * Source: https://stackoverflow.com/questions/18279141/javascript-string-encryption-and-decryption
- * @param {string} salt // Text which is added to the text to be encrypted
- * @param {string} text // Text to encrypt
- * @returns // Returns the encrypted text
+ * @param {string} salt - Text which is added to the text to be encrypted
+ * @param {string} text - Text to encrypt
+ * @returns {string} Returns the encrypted text
  */
 const crypt = (salt, text) => {
     const textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
@@ -32,11 +32,11 @@ const crypt = (salt, text) => {
 };
 
 /**
- * Decryption function of username and password
+ * Decryption of username and password
  * Source: https://stackoverflow.com/questions/18279141/javascript-string-encryption-and-decryption
- * @param {string} salt // Text which is added to the text to be decrypted
- * @param {string} text // Text to decrypt
- * @returns // Returns the decrypted text
+ * @param {string} salt -  Text which is added to the text to be decrypted
+ * @param {string} text - Text to decrypt
+ * @returns {string} Returns the decrypted text
  */
 const decrypt = (salt, encoded) => {
     const textToChars = (text) => text.split("").map((c) => c.charCodeAt(0));
@@ -87,7 +87,7 @@ function loginOrCreateAccount() {
 
 /**
  * Creates a user account if it doesn't already exist
- * @param {Object} user // The encrypted user data 
+ * @param {Object} user - The encrypted user data 
  */
 function createUserAccount(user) {
     let userAlreadyExists;
@@ -113,7 +113,7 @@ function createUserAccount(user) {
 
 /**
  * Logs in the existing user if correct credentials have been entered
- * @param {Object} user // The encrypted user data 
+ * @param {Object} user - The encrypted user data 
  */
 function loginUserAccount(user) {
     // First check if there are any users. If none have been created yet, display an error message
@@ -163,7 +163,7 @@ function loginSuccessful() {
  * Iterate through all users
  * The if query checks whether the username exists and only the password was entered incorrectly
  * An error message is displayed in the else statement because the user name does not exist
- * @param {Object} user // The encrypted user data 
+ * @param {Object} user -  The encrypted user data 
  */
 function loginNotSuccessful(user) {
     for (let i = 0; i < users.length; i++) {
@@ -190,7 +190,7 @@ function loginNotSuccessful(user) {
 
 /**
  * HTML template for the successful creation of a user account
- * @returns // Return the HTML snippet
+ * @returns {HTMLElement} Returns static HTML-Code
  */
 function accountSuccessfullyCreatedMessage() {
     return `
@@ -203,7 +203,6 @@ function accountSuccessfullyCreatedMessage() {
 
 /**
  * HTML template for the successful login
- * @returns // Return the HTML snippet
  */
 function loginSuccessfulMessage() {
     let loginContainer = document.getElementById('login-form');
@@ -217,8 +216,7 @@ function loginSuccessfulMessage() {
 
 /**
  * HTML template for incorrect login
- * @param {string} string // An error message displayed to the user 
- * @returns // // Return the HTML snippet
+ * @param {string} string - An error message displayed to the user 
  */
 function loginErrorMessage(string) {
     document.getElementById('login-messages').classList.remove('d-none');

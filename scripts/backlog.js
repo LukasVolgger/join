@@ -29,7 +29,6 @@ function showBacklog() {
 
 /**
  * Shows all information of a task that is important for the user
- * 
  * @param {number} i - Passes the index of the task
  */
 function showBacklogTask(i) {
@@ -40,7 +39,6 @@ function showBacklogTask(i) {
 
 /**
  * Allows you to move an item to the board by changing the processing status to todo
- * 
  * @param {number} i - Passes the index of the task to be changed
  */
 async function moveToBoard(i) {
@@ -51,10 +49,9 @@ async function moveToBoard(i) {
 
 /**
  * Allows changing an already existing task
- * 
  * @param {number} i - Passes the index of the task to be changed
  */
- function editBacklogTask(i) {
+function editBacklogTask(i) {
     document.getElementById('dialog-content-backlog').innerHTML = '';
     document.getElementById('dialog-content-backlog').innerHTML = templateEditBacklogTask(i);
     document.getElementById('change-backlog-title').value = tasks[i].title;
@@ -68,7 +65,6 @@ async function moveToBoard(i) {
 
 /**
  * Saves the changes made while editing
- * 
  * @param {number} i - Passes the index of the task to be changed
  */
 async function changeBacklogTask(i) {
@@ -86,10 +82,9 @@ async function changeBacklogTask(i) {
 
 /**
  * Delete a Task
- * 
  * @param {number} i - Passes the index of the task to be changed
  */
- async function deleteBacklogTask(i) {
+async function deleteBacklogTask(i) {
     tasks.splice(i, 1);
     await updateBacklog();
 }
@@ -98,7 +93,7 @@ async function changeBacklogTask(i) {
 /**
  * Updates the backlog after something has been changed
  */
- async function updateBacklog() {
+async function updateBacklog() {
     closeDialog('dialog-bg-backlog');
     showBacklog();
     await saveToBackend();
@@ -107,11 +102,10 @@ async function changeBacklogTask(i) {
 
 /**
  * Generate dynamic HTML-Code for a backlog item
- * 
  * @param {number} i - Passes the index of the task which should be displayed
- * @returns - Returns the customized HTML-Code
+ * @returns {HTMLElement} Returns dynamic HTML-Code
  */
- function templateBacklogItem(i) {
+function templateBacklogItem(i) {
     return `
         <div class="backlog-item ${tasks[i].category}" id="backlog-item-${i}" onclick="showBacklogTask(${i})">
             <div class="backlog-item-assigned">
@@ -139,9 +133,8 @@ async function changeBacklogTask(i) {
 
 /**
  * Generate dynamic HTML-Code for a dialog window in which a task is displayed
- * 
  * @param {number} i - Passes the index of the task which should be displayed
- * @returns - Returns the customized HTML-Code
+ * @returns {HTMLElement} Returns dynamic HTML-Code
  */
 function templateBacklogTask(i) {
     return `
@@ -193,9 +186,8 @@ function templateBacklogTask(i) {
 
 /**
  * Generate dynamic HTML-Code for a dialog window in which a task can be changed
- * 
  * @param {number} i - Passes the index of the task which should be displayed
- * @returns - Returns the customized HTML-Code
+ * @returns {HTMLElement} Returns dynamic HTML-Code
  */
 function templateEditBacklogTask(i) {
     return `

@@ -36,7 +36,6 @@ function showBoard() {
 
 /**
  * Displays a category of the board by filtering all tasks by processing status
- * 
  * @param {string} id - Passes the id of the category to be displayed
  */
 function showCategory(id) {
@@ -51,7 +50,6 @@ function showCategory(id) {
 
 /**
  * When you start dragging an element, writes its id to the currentDraggedElement variable
- * 
  * @param {number} creationDate - Passes the creation date in the form of an integer as the unique id of an element
  */
 function startDragging(creationDate) {
@@ -61,7 +59,6 @@ function startDragging(creationDate) {
 
 /**
  * Prevent the element from being handled by default in order to allow a Drop
- * 
  * @param {*} ev - Passes the current event to the function
  */
 function allowDrop(ev) {
@@ -71,7 +68,6 @@ function allowDrop(ev) {
 
 /**
  * Saves the new processing status in the backend after dropping an element into the respective field in the HTML file
- * 
  * @param {string} processingState - passes the category of the HTML region over which the element was dropped
  */
 async function moveTo(processingState) {
@@ -83,17 +79,15 @@ async function moveTo(processingState) {
 
 /**
  * Highlight the HTML area over which the element is currently being dragged
- * 
  * @param {string} id - Passes the HTML-ID of the Area
  */
-function hightlight(id) {
+function highlight(id) {
     document.getElementById(id).classList.add('drag-area-highlight');
 }
 
 
 /**
  * Removes the highlighting of the HTML area 
- * 
  * @param {string} id - Passes the HTML-ID of the Area
  */
 function removeHighlight(id) {
@@ -103,7 +97,6 @@ function removeHighlight(id) {
 
 /**
  * Shows all information of a task that is important for the user
- * 
  * @param {number} creationDate - Passes the creation date in the form of an integer as the unique id of an element
  */
 function showBoardTask(creationDate) {
@@ -115,7 +108,6 @@ function showBoardTask(creationDate) {
 
 /**
  * Removes a task from the board by setting the processing status to unallocated
- * 
  * @param {number} i - Passes the index of the task to be changed
  */
 async function removeFromBoard(i) {
@@ -126,7 +118,6 @@ async function removeFromBoard(i) {
 
 /**
  * Allows changing an already existing task
- * 
  * @param {number} i - Passes the index of the task to be changed
  */
 function editBoardTask(i) {
@@ -143,7 +134,6 @@ function editBoardTask(i) {
 
 /**
  * Saves the changes made while editing
- * 
  * @param {number} i - Passes the index of the task to be changed
  */
 async function changeBoardTask(i) {
@@ -161,7 +151,6 @@ async function changeBoardTask(i) {
 
 /**
  * Delete a Task
- * 
  * @param {number} i - Passes the index of the task to be changed
  */
 async function deleteBoardTask(i) {
@@ -182,9 +171,8 @@ async function updateBoard() {
 
 /**
  * Generate dynamic HTML-Code for a board item
- * 
  * @param {object} task - Passes a task in the form of an object
- * @returns - Returns the customized HTML-Code
+ * @returns {HTMLElement} Returns dynamic HTML-Code
  */
 function templateBoardItem(task) {
     return `
@@ -204,9 +192,8 @@ function templateBoardItem(task) {
 
 /**
  * Generate dynamic HTML-Code for a dialog window in which a task is displayed
- * 
  * @param {number} i - Passes the index of the task which should be displayed
- * @returns - Returns the customized HTML-Code
+ * @returns {HTMLElement} Returns dynamic HTML-Code
  */
 function templateBoardTask(i) {
     return `
@@ -258,9 +245,8 @@ function templateBoardTask(i) {
 
 /**
  * Generate dynamic HTML-Code for a dialog window in which a task can be changed
- * 
  * @param {number} i - Passes the index of the task which should be displayed
- * @returns - Returns the customized HTML-Code
+ * @returns {HTMLElement} Returns dynamic HTML-Code
  */
 function templateEditBoardTask(i) {
     return `

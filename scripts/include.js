@@ -1,7 +1,7 @@
 /**
  * Script from W3Schools to include HTML snippets
  * https://www.w3schools.com/howto/howto_html_include.asp
- * @returns // Return the HTML snippet
+ * @returns {HTMLElement} Returns dynamic HTML-Code
  */
 function includeHTML() {
     var z, i, elmnt, file, xhttp;

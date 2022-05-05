@@ -49,7 +49,6 @@ async function loadFromBackend() {
 
 /**
  * Open a Dialog-Window
- * 
  * @param {string} id - Passes the html id of the dialog window
  */
 function openDialog(id) {
@@ -59,7 +58,6 @@ function openDialog(id) {
 
 /**
  * Close a Dialog-Window
- * 
  * @param {string} id - Passes the html id of the dialog window
  */
 function closeDialog(id) {
@@ -69,11 +67,10 @@ function closeDialog(id) {
 
 /**
  * Sets a previously saved value of an option to selected
- * 
  * @param {string} id - Passes the html id of the used option
  * @param {*} variable - Passes the value which is saved as selected
  */
- function selectSavedOption(id, variable) {
+function selectSavedOption(id, variable) {
     Array.from(document.querySelector(`#${id}`).options).forEach(function(option_element) {
         if (option_element.value == variable) {
             option_element.selected = true;

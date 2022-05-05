@@ -43,7 +43,6 @@ async function downloadFromServer() {
 
 /**
  * Sets the url from the server
- * 
  * @param {string} url 
  */
 function setURL(url) {
@@ -91,8 +90,7 @@ function saveJSONToServer() {
 
 /**
  * Determine the Proxy Settings
- * 
- * @returns - returns an url under certain conditions
+ * @returns Returns an URL under certain conditions
  */
 function determineProxySettings() {
     return '';
