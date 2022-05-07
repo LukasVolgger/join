@@ -2,7 +2,7 @@
 
 Join is a team project of the frontend web developer course at the <a href="https://developerakademie.com/">Developer Akademie</a>. The focus is on HTML, CSS, JS and working with version control Git with multiple collaborators. The Bootstrap design framework was used in this project. <br>
 <br>
-In this project, the client - server functionality was simulated with a mini-backend (More information can be found in the repository <a href="https://github.com/LukasVolgger/smallest_backend_ever">smallest_backend_ever</a>. The data is not stored locally in local storage but on a server in Json format. <br>
+In this project, the client - server functionality was simulated with a mini-backend (More information can be found in the repository <a href="https://github.com/LukasVolgger/smallest_backend_ever">smallest_backend_ever</a>). The data is not stored locally in local storage but on a server in Json format. <br>
 <br>
 <b>If you like the app, please leave a star and check out the collaborators!</b>
 
@@ -89,7 +89,7 @@ Download the source code or clone the repository on your local computer by click
 ![readme_installation_1](https://user-images.githubusercontent.com/55922592/161735913-9de1b046-0a0c-448b-80fa-145ee904d8ab.png)
   
 <h3>3. Configuration</h3>
-After the <a href="https://github.com/LukasVolgger/smallest_backend_ever">smallest_backend_ever</a> is set up, set the url in <a href="https://github.com/LukasVolgger/join/blob/main/scripts/main.js">main.js line 11</a> to your url of the backend:
+After the <a href="https://github.com/LukasVolgger/smallest_backend_ever">smallest_backend_ever</a> is set up, set the url in <a href="https://github.com/LukasVolgger/join/blob/main/scripts/main.js">main.js, line 11</a> to your url of the backend:
 <br>
 <br>
 
