@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: include.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: include.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Script from W3Schools to include HTML snippets
+ * https://www.w3schools.com/howto/howto_html_include.asp
+ * @returns {HTMLElement} Returns dynamic HTML-Code
+ */
+function includeHTML() {
+    var z, i, elmnt, file, xhttp;
+    /* Loop through a collection of all HTML elements: */
+    z = document.getElementsByTagName("*");
+    for (i = 0; i &lt; z.length; i++) {
+        elmnt = z[i];
+        /*search for elements with a certain atrribute:*/
+        file = elmnt.getAttribute("w3-include-html");
+        if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                    if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                    /* Remove the attribute, and call this function once more: */
+                    elmnt.removeAttribute("w3-include-html");
+                    includeHTML();
+                }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+        }
+    }
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#accountSuccessfullyCreated">accountSuccessfullyCreated</a></li><li><a href="global.html#accountSuccessfullyCreatedMessage">accountSuccessfullyCreatedMessage</a></li><li><a href="global.html#addTask">addTask</a></li><li><a href="global.html#allowDrop">allowDrop</a></li><li><a href="global.html#changeTask">changeTask</a></li><li><a href="global.html#closeDialog">closeDialog</a></li><li><a href="global.html#createUserAccount">createUserAccount</a></li><li><a href="global.html#crypt">crypt</a></li><li><a href="global.html#decrypt">decrypt</a></li><li><a href="global.html#deleteTask">deleteTask</a></li><li><a href="global.html#determineProxySettings">determineProxySettings</a></li><li><a href="global.html#downloadFromServer">downloadFromServer</a></li><li><a href="global.html#drag">drag</a></li><li><a href="global.html#drop">drop</a></li><li><a href="global.html#editTask">editTask</a></li><li><a href="global.html#highlight">highlight</a></li><li><a href="global.html#includeHTML">includeHTML</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#initLogin">initLogin</a></li><li><a href="global.html#loadFromBackend">loadFromBackend</a></li><li><a href="global.html#loadJSONFromServer">loadJSONFromServer</a></li><li><a href="global.html#loginErrorMessage">loginErrorMessage</a></li><li><a href="global.html#loginNotSuccessful">loginNotSuccessful</a></li><li><a href="global.html#loginOrCreateAccount">loginOrCreateAccount</a></li><li><a href="global.html#loginSuccessful">loginSuccessful</a></li><li><a href="global.html#loginSuccessfulMessage">loginSuccessfulMessage</a></li><li><a href="global.html#loginUserAccount">loginUserAccount</a></li><li><a href="global.html#logout">logout</a></li><li><a href="global.html#move">move</a></li><li><a href="global.html#moveToBoard">moveToBoard</a></li><li><a href="global.html#openDialog">openDialog</a></li><li><a href="global.html#redirect">redirect</a></li><li><a href="global.html#removeFromBoard">removeFromBoard</a></li><li><a href="global.html#removeHighlight">removeHighlight</a></li><li><a href="global.html#resetUserInput">resetUserInput</a></li><li><a href="global.html#saveJSONToServer">saveJSONToServer</a></li><li><a href="global.html#saveToBackend">saveToBackend</a></li><li><a href="global.html#selectNavElement">selectNavElement</a></li><li><a href="global.html#selectSavedOption">selectSavedOption</a></li><li><a href="global.html#setURL">setURL</a></li><li><a href="global.html#showBacklog">showBacklog</a></li><li><a href="global.html#showBoard">showBoard</a></li><li><a href="global.html#showCategory">showCategory</a></li><li><a href="global.html#showTask">showTask</a></li><li><a href="global.html#templateBacklogItem">templateBacklogItem</a></li><li><a href="global.html#templateBoardItem">templateBoardItem</a></li><li><a href="global.html#templateEditTask">templateEditTask</a></li><li><a href="global.html#templateTask">templateTask</a></li><li><a href="global.html#toggleMobileMenu">toggleMobileMenu</a></li><li><a href="global.html#update">update</a></li><li><a href="global.html#updateBacklog">updateBacklog</a></li><li><a href="global.html#updateBoard">updateBoard</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sat May 07 2022 19:18:13 GMT+0200 (Mitteleuropäische Sommerzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
