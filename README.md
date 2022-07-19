@@ -105,3 +105,8 @@ Navigate to the location on your computer where you downloaded/cloned the code. 
 
 <h2 id="license">License</h2>
 
+All game graphics are property of the <a href="https://developerakademie.com/">Developer Akademie</a>. The graphics are left to the participants of the course for learning purposes for use in the projects and are subject to the copyright of the <a href="https://developerakademie.com/">Developer Akademie</a>.
+
+The source code is subject to the following license:
+
+<a href="https://github.com/LukasVolgger/join/blob/main/license">![APM](https://img.shields.io/apm/l/vim-mode?label=License&style=for-the-badge)</a>
