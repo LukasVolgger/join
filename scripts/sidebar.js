@@ -17,13 +17,13 @@ function selectNavElement() {
             document.getElementById('nav-element-backlog').classList.add('selected-nav-element');
             break;
 
-        case 'index.html':
-            document.getElementById('nav-element-index').classList.add('selected-nav-element');
+        case 'add_task.html':
+            document.getElementById('nav-element-add_task').classList.add('selected-nav-element');
             break;
 
-        case 'index.html#':
-            document.getElementById('nav-element-index').classList.add('selected-nav-element');
-            break;
+            // case 'index.html#':
+            //     document.getElementById('nav-element-index').classList.add('selected-nav-element');
+            //     break;
 
         case 'help.html':
             document.getElementById('nav-element-help').classList.add('selected-nav-element');
@@ -39,7 +39,7 @@ function selectNavElement() {
  * Redirects the user to the login.html page
  */
 function logout() {
-    window.location.href = '../login.html';
+    window.location.href = '../index.html';
 }
 
 /**
