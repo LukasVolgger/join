@@ -8,7 +8,7 @@
 let users = [];
 let tasks = [];
 
-setURL('http://scripts.lukas-volgger.at/smallest_backend_ever');
+setURL('https://scripts.lukas-volgger.at/smallest_backend_ever');
 
 
 // ####################################### MAIN FUNCTIONS #######################################
