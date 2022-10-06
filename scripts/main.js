@@ -8,7 +8,7 @@
 let users = [];
 let tasks = [];
 
-setURL('http://gruppe-211.developerakademie.net/smallest_backend_ever');
+setURL('http://scripts.lukas-volgger.at/smallest_backend_ever');
 
 
 // ####################################### MAIN FUNCTIONS #######################################
@@ -71,7 +71,7 @@ function closeDialog(id) {
  * @param {*} variable - Passes the value which is saved as selected
  */
 function selectSavedOption(id, variable) {
-    Array.from(document.querySelector(`#${id}`).options).forEach(function (option_element) {
+    Array.from(document.querySelector(`#${id}`).options).forEach(function(option_element) {
         if (option_element.value == variable) {
             option_element.selected = true;
         }
