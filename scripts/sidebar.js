@@ -6,7 +6,7 @@
 function selectNavElement() {
     let url = window.location.href;
     let htmlPage = url.substr(url.lastIndexOf('/') + 1);
-    // console.log(htmlSite);
+    console.log(htmlPage);
 
     switch (htmlPage) {
         case 'board.html':
@@ -21,10 +21,6 @@ function selectNavElement() {
             document.getElementById('nav-element-add_task').classList.add('selected-nav-element');
             break;
 
-            // case 'index.html#':
-            //     document.getElementById('nav-element-index').classList.add('selected-nav-element');
-            //     break;
-
         case 'help.html':
             document.getElementById('nav-element-help').classList.add('selected-nav-element');
             break;
@@ -32,7 +28,9 @@ function selectNavElement() {
         case 'about.html':
             document.getElementById('nav-element-about').classList.add('selected-nav-element');
             break;
+
     }
+
 }
 
 /**

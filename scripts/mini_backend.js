@@ -1,5 +1,4 @@
-// ####################################### GLOBAL SCOPE #######################################
-
+'use strict';
 
 let jsonFromServer = {};
 let BASE_SERVER_URL;
@@ -20,9 +19,6 @@ const backend = {
         return saveJSONToServer();
     }
 };
-
-
-// ####################################### MAIN FUNCTIONS #######################################
 
 
 // Load the function downloadFromServer() when loading a window
@@ -94,10 +90,4 @@ function saveJSONToServer() {
  */
 function determineProxySettings() {
     return '';
-
-    if (window.location.href.indexOf('.developerakademie.com') > -1) {
-        return '';
-    } else {
-        return 'https://cors-anywhere.herokuapp.com/';
-    }
 }

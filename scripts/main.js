@@ -1,6 +1,5 @@
 'use strict';
 
-
 // ####################################### GLOBAL SCOPE #######################################
 
 
@@ -8,19 +7,17 @@
 let users = [];
 let tasks = [];
 
-setURL('https://scripts.lukas-volgger.at/smallest_backend_ever');
-
-
 // ####################################### MAIN FUNCTIONS #######################################
 
+setURL('https://scripts.lukas-volgger.at/smallest_backend_ever');
 
 /**
  * Initialize needed functions
  */
 async function init() {
-    includeHTML();
     await downloadFromServer();
-    await loadFromBackend();
+    includeHTML();
+    loadFromBackend();
     selectNavElement();
 }
 

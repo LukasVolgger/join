@@ -231,8 +231,8 @@ function loginErrorMessage(string) {
 }
 
 /**
- * Directs the user to the index.html of the project after a successful login
+ * Directs the user to the add_task.html of the project after a successful login
  */
 function redirect() {
-    window.location.href = './html/index.html';
+    window.location.href = './html/add_task.html';
 }
