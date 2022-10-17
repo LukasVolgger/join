@@ -193,7 +193,7 @@ function templateTask(i, page) {
             <div>
                 <span class="form-label">ASSIGNED TO</span>
                 <div class="assigned-to">
-                    <img class="rounded-circle profile-picture" src="../imgs/pp_${tasks[i].assigned_to}.jfif" alt="">
+                    <img class="rounded-circle profile-picture" src="../assets/img/pp_${tasks[i].assigned_to}.jfif" alt="">
                     <div class="person-name">
                         <span>${tasks[i].assigned_to}</span>
                         <span style="color: #6f8bf3f7">${tasks[i].assigned_to}@join.com</span>
