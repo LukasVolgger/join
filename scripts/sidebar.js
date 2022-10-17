@@ -6,31 +6,42 @@
 function selectNavElement() {
     let url = window.location.href;
     let htmlPage = url.substr(url.lastIndexOf('/') + 1);
-    console.log(htmlPage);
+    // console.log(htmlPage);
 
-    switch (htmlPage) {
-        case 'board.html':
+    let done = false;
+
+    let interval = setInterval(() => {
+        if (htmlPage == 'board.html' && document.getElementById('nav-element-board')) {
             document.getElementById('nav-element-board').classList.add('selected-nav-element');
-            break;
+            done = true;
+        }
 
-        case 'backlog.html':
+        if (htmlPage == 'backlog.html' && document.getElementById('nav-element-backlog')) {
             document.getElementById('nav-element-backlog').classList.add('selected-nav-element');
-            break;
+            done = true;
+        }
 
-        case 'add_task.html':
+        if (htmlPage == 'add_task.html' && document.getElementById('nav-element-add_task')) {
             document.getElementById('nav-element-add_task').classList.add('selected-nav-element');
-            break;
+            done = true;
+        }
 
-        case 'help.html':
+        if (htmlPage == 'help.html' && document.getElementById('nav-element-help')) {
             document.getElementById('nav-element-help').classList.add('selected-nav-element');
-            break;
+            done = true;
+        }
 
-        case 'about.html':
+        if (htmlPage == 'about.html' && document.getElementById('nav-element-about')) {
             document.getElementById('nav-element-about').classList.add('selected-nav-element');
-            break;
+            done = true;
+        }
 
-    }
+        if (done) {
+            clearInterval(interval);
+        }
 
+        // console.log('Interval running');
+    }, 100);
 }
 
 /**
