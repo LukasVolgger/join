@@ -48,23 +48,23 @@ Here is an overview of the most important functions of the project. Click on the
 
 <h2 id="preview">Preview</h2>
 
-![This is an image](/imgs/preview/01_login_preview.png)
+![This is an image](./assets/img/preview/01_login_preview.png)
 
 ---
 
-![This is an image](/imgs/preview/02_add_task_preview.png)
+![This is an image](./assets/img/preview/02_add_task_preview.png)
 
 ---
 
-![This is an image](/imgs/preview/03_backlog_preview.png)
+![This is an image](./assets/img/preview/03_backlog_preview.png)
 
 ---
 
-![This is an image](/imgs/preview/04_board_preview.png)
+![This is an image](./assets/img/preview/04_board_preview.png)
 
 ---
 
-![This is an image](/imgs/preview/05_help_preview.png)
+![This is an image](./assets/img/preview/05_help_preview.png)
 
 
 <h2 id="installation">Installation</h2>
