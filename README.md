@@ -86,7 +86,7 @@ Download the source code or clone the repository on your local computer by click
 <br>
 <br>
 
-![readme_installation_1](https://user-images.githubusercontent.com/55922592/161735913-9de1b046-0a0c-448b-80fa-145ee904d8ab.png)
+![readme_get_code](https://user-images.githubusercontent.com/55922592/198102760-e106c513-82ba-48f2-8ef1-25b0ee494fb1.png)
   
 <h3>3. Configuration</h3>
 After the <a href="https://github.com/LukasVolgger/smallest_backend_ever">smallest_backend_ever</a> is set up, set the url in <a href="https://github.com/LukasVolgger/join/blob/main/scripts/main.js">main.js, line 11</a> to your url of the backend:
@@ -101,7 +101,9 @@ Navigate to the location on your computer where you downloaded/cloned the code. 
 <br>
 <br>
 
-![readme_installation_2](https://user-images.githubusercontent.com/55922592/161733187-a9ca556c-d21e-4f74-b96d-015082da85d5.png)
+![readme_chrome_logo_left_space](https://user-images.githubusercontent.com/55922592/198104490-f9503625-2407-465d-bf63-115405d6ade6.png)
+<br>
+index.html
 
 <h2 id="license">License</h2>
 
