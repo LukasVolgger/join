@@ -43,7 +43,8 @@
 }
 
 .drag-area-highlight {
-    background-color: #e8e5f8;
+    /* background-color: #e8e5f8; */
+    background-color: #e9ffc8;
 }
 
 
@@ -64,7 +65,8 @@
 }
 
 .board-item:hover {
-    background-color: rgb(240, 240, 240);
+    /* background-color: rgb(240, 240, 240); */
+    background-color: #e8ecff;
 }
 
 .board-item-header {
