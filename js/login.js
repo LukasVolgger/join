@@ -141,6 +141,13 @@ function loginUserAccount(user) {
 }
 
 /**
+ * Simulates a guest login
+ */
+function guestLogin() {
+    loginSuccessful();
+}
+
+/**
  * Shows the user a message when the account was created successfully
  */
 function accountSuccessfullyCreated() {

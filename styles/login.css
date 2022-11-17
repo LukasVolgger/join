@@ -36,12 +36,12 @@ body {
 
 .form-control:focus {
     border-color: rgb(210, 194, 253);
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(210, 194, 253, 0.8);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 4px rgba(210, 194, 253, 0.8);
 }
 
 .form-check-input:focus {
     border-color: rgb(210, 194, 253);
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(210, 194, 253, 0.8);
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 4px rgba(210, 194, 253, 0.8);
 }
 
 .checkbox-input {
