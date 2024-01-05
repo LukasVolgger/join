@@ -9,7 +9,7 @@ let tasks = [];
 
 // ####################################### MAIN FUNCTIONS #######################################
 
-setURL('https://scripts.lukas-volgger.at/smallest_backend_ever');
+setURL('https://scripts.lukas-volgger.dev/smallest_backend_ever');
 
 /**
  * Initialize needed functions
