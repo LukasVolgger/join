@@ -16,7 +16,7 @@
     <!-- Bootstrap End -->
     <link rel="stylesheet" href="../styles/mainStyle.css">
     <link rel="stylesheet" href="../styles/sidebar.css">
-    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/add_task.css">
     <link rel="stylesheet" href="../styles/board.css">
     <script src="../js/mini_backend.js"></script>
     <script src="../js/main.js"></script>
@@ -42,27 +42,33 @@
                     <div class="border-title">
                         <h4> To Do</h4>
                     </div>
-                    <div class="border-content" id="todo" ondrop="drop('todo'); removeHighlight('todo')" ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('todo')">
+                    <div class="border-content" id="todo" ondrop="drop('todo'); removeHighlight('todo')"
+                        ondragleave="removeHighlight('todo')" ondragover="allowDrop(event); highlight('todo')">
                     </div>
                 </div>
                 <div class="border-col">
                     <div class="border-title">
                         <h4> In Progress</h4>
                     </div>
-                    <div class="border-content" id="inProgress" ondrop="drop('inProgress'); removeHighlight('inProgress')" ondragleave="removeHighlight('inProgress')" ondragover="allowDrop(event); highlight('inProgress')"></div>
+                    <div class="border-content" id="inProgress"
+                        ondrop="drop('inProgress'); removeHighlight('inProgress')"
+                        ondragleave="removeHighlight('inProgress')"
+                        ondragover="allowDrop(event); highlight('inProgress')"></div>
                 </div>
                 <div class="border-col">
                     <div class="border-title">
                         <h4> Testing</h4>
                     </div>
-                    <div class="border-content" id="testing" ondrop="drop('testing'); removeHighlight('testing')" ondragleave="removeHighlight('testing')" ondragover="allowDrop(event); highlight('testing')">
+                    <div class="border-content" id="testing" ondrop="drop('testing'); removeHighlight('testing')"
+                        ondragleave="removeHighlight('testing')" ondragover="allowDrop(event); highlight('testing')">
                     </div>
                 </div>
                 <div class="border-col">
                     <div class="border-title">
                         <h4>Done</h4>
                     </div>
-                    <div class="border-content" id="done" ondrop="drop('done'); removeHighlight('done')" ondragleave="removeHighlight('done')" ondragover="allowDrop(event); highlight('done')">
+                    <div class="border-content" id="done" ondrop="drop('done'); removeHighlight('done')"
+                        ondragleave="removeHighlight('done')" ondragover="allowDrop(event); highlight('done')">
                     </div>
                 </div>
             </div>
