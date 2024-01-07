@@ -1,114 +1,93 @@
-<h1>Join</h1>
+# Join
+Join is a team project of the frontend web developer course at the [Developer Akademie](https://developerakademie.com/). The focus is on HTML, CSS, JS and working with version control Git with multiple collaborators. The Bootstrap design framework was used in this project.
 
-Join is a team project of the frontend web developer course at the <a href="https://developerakademie.com/">Developer Akademie</a>. The focus is on HTML, CSS, JS and working with version control Git with multiple collaborators. The Bootstrap design framework was used in this project. <br>
-<br>
-In this project, the client - server functionality was simulated with a mini-backend (More information can be found in the repository <a href="https://github.com/LukasVolgger/smallest_backend_ever">smallest_backend_ever</a>). The data is not stored locally in local storage but on a server in Json format. <br>
-<br>
-<b>If you like the app, please leave a star and check out the collaborators!</b>
+In this project, the client - server functionality was simulated with a mini-backend (More information can be found in the repository [smallest_backend_ever](https://github.com/LukasVolgger/smallest_backend_ever). The data is not stored locally in local storage but on a server in Json format.
 
+**If you like the app, please leave a star and check out the collaborators!**
 
-<b>COLLABORATORS:</b>
+**Table of Contents**
 
+- [Join](#join)
+  - [Features](#features)
+  - [Preview](#preview)
+  - [Run the Application](#run-the-application)
+    - [1. Requirements](#1-requirements)
+    - [2. Clone the Source](#2-clone-the-source)
+    - [3. Start the Application](#3-start-the-application)
+  - [Feedback \& Support](#feedback--support)
+  - [License](#license)
+    - [Graphics](#graphics)
+    - [Source Code](#source-code)
 
-- <a href="https://github.com/SamirBarbat2020">Samir BARBAT</a>
-- <a href="https://github.com/samuelbergen">Samuel BERGEN</a>
-- <a href="https://github.com/LukasVolgger">Lukas VOLGGER</a>
+## Features
+Here is an overview of the most important functions of the project.
 
-<b>IMPORTANT:</b> Please note that learning projects focus on the given tasks. It is therefore possible that some functions do not work or are not scripted.
-<h3>Table of Contents</h3>
+**Available Languages**
 
-- <a href="#features">Features</a>
-- <a href="#preview">Preview</a>
-- <a href="#installation">Installation</a>
-- <a href="#license">License</a>
-
-<h2 id="features">Features</h2>
-Here is an overview of the most important functions of the project. Click on the summary to expand.<br>
-
-<br>
-
-<details><summary><b>Available Languages</b></summary>
+- English
   
-:heavy_check_mark: English <br>
+**Functionality**
   
-</details>
+- Simulation of a simple login function using JS. User input is stored and read in encrypted form
+- Tasks can be created. The entries must be complete and are validated by the bootstrap form validation
+- The created tasks are then collected in the backlog. Here they can be edited again, deleted or sent to the board
+- Depending on the processing status, tasks can be moved in the board using drag & drop. The tasks can also be edited or removed here
+- The Help page provides an easy-to-understand user guide
+- Legal information can be found on the About page
+- All tasks and users are stored on an FTP server
+- Responsive Webdesign
 
-<details><summary><b>Functionality</b></summary>
-  
-:heavy_check_mark: Simulation of a simple login function using JS. User input is stored and read in encrypted form <br>
-:heavy_check_mark: Tasks can be created. The entries must be complete and are validated by the bootstrap form validation <br>
-:heavy_check_mark: The created tasks are then collected in the backlog. Here they can be edited again, deleted or sent to the board <br>
-:heavy_check_mark: Depending on the processing status, tasks can be moved in the board using drag & drop. The tasks can also be edited or removed here <br>
-:heavy_check_mark: The Help page provides an easy-to-understand user guide <br>
-:heavy_check_mark: Legal information can be found on the About page <br>
-:heavy_check_mark: All tasks and users are stored on an FTP server <br>
-:heavy_check_mark: Responsive Webdesign <br>
-  
-</details>
+## Preview
 
-<h2 id="preview">Preview</h2>
-
-![This is an image](./assets/img/preview/01_login_preview.png)
+![Login](./assets/img/preview/login-min.png "Login Preview")
 
 ---
 
-![This is an image](./assets/img/preview/02_add_task_preview.png)
+![Add Task](./assets/img/preview/add_task-min.png "Add Task Preview")
 
 ---
 
-![This is an image](./assets/img/preview/03_backlog_preview.png)
+![Backlog](./assets/img/preview/backlog-min.png "Backlog Previe")
 
----
+## Run the Application
+Follow these steps to run the application.
 
-![This is an image](./assets/img/preview/04_board_preview.png)
+### 1. Requirements
+All you need is a web browser like one of the following:
 
----
-
-![This is an image](./assets/img/preview/05_help_preview.png)
-
-
-<h2 id="installation">Installation</h2>
-Follow these steps to install/test the project.
-
-<h3 id="requirements">1. Requirements</h3>
-<h4> 1.1. You need a web browser like one of the following:</h4>
-
-<a href="https://www.google.com/chrome/">![Google Chrome](https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white)</a>
-<a href="https://www.mozilla.org/en-US/firefox/new/">![Firefox](https://img.shields.io/badge/Firefox-FF7139?style=for-the-badge&logo=Firefox-Browser&logoColor=white)</a>
-<a href="https://www.microsoft.com/en-US/edge">![Edge](https://img.shields.io/badge/Edge-0078D7?style=for-the-badge&logo=Microsoft-edge&logoColor=white)</a>
-
-  <h4>1.2. Download and set up the mini-backend:</h4>
-  
-  https://github.com/LukasVolgger/smallest_backend_ever
-
-<h3>2. Download the Source</h3>
-Download the source code or clone the repository on your local computer by clicking the <b>Code</b> button.
-<br>
-<br>
-
-![readme_get_code](https://user-images.githubusercontent.com/55922592/198102760-e106c513-82ba-48f2-8ef1-25b0ee494fb1.png)
-  
-<h3>3. Configuration</h3>
-After the <a href="https://github.com/LukasVolgger/smallest_backend_ever">smallest_backend_ever</a> is set up, set the url in <a href="https://github.com/LukasVolgger/join/blob/main/scripts/main.js">main.js, line 11</a> to your url of the backend:
-<br>
-<br>
-
-![image](https://user-images.githubusercontent.com/55922592/167065620-5a128641-98e6-422f-8715-e031f5423cb4.png)
+- [Google Chrome](https://www.google.com/chrome/)
+- [Mozilla Firefox](https://www.mozilla.org/en-US/firefox/new/)
+- [Microsoft Edge](https://www.microsoft.com/en-US/edge)
 
 
-<h3>4. Start the Project</h3>
-Navigate to the location on your computer where you downloaded/cloned the code. In the project directory, open the <b>index.html</b> file with a web browser.
-<br>
-<br>
+### 2. Clone the Source
+Clone the source code or download the repository on your local computer by clicking the **Code** button.
 
-![readme_chrome_logo_left_space](https://user-images.githubusercontent.com/55922592/198104490-f9503625-2407-465d-bf63-115405d6ade6.png)
-<br>
-index.html
+``` bash
+git clone https://github.com/LukasVolgger/join.git
+```
 
-<h2 id="license">License</h2>
+### 3. Start the Application
+Navigate to the location on your computer where you cloned/downloaded the code. In the project directory, open the **index.html** file with a web browser.
 
-Some graphics are property of the <a href="https://developerakademie.com/">Developer Akademie</a>. The graphics are left to the participants of the course for learning purposes for use in the projects and are subject to the copyright of the <a href="https://developerakademie.com/">Developer Akademie</a>.
+## Feedback & Support
+Your feedback is invaluable, and I'm here to assist you with any questions or concerns. Your input plays a crucial role in enhancing the project and optimizing the user experience. Feel free to reach out to me:
 
+- **Feedback:** Share your thoughts, suggestions, or ideas with me so that I can continuously work towards improvement.
+
+- **Support Inquiry:** If you encounter difficulties or need assistance, [create a new GitHub issue](https://github.com/LukasVolgger/join/issues/new). Please describe your issue in detail to enable me to provide quick and accurate support.
+
+Thank you for your support!
+
+## License
+Please note the following license terms with regard to the graphics used and the source code.
+
+### Graphics
+<!-- 2. Online Courses -->
+All graphics/images are property of [Developer Akademie](https://developerakademie.com/). The graphics are left to the participants of the course for learning purposes for use in the projects and are subject to the copyright of the [Developer Akademie](https://developerakademie.com/).
+
+
+### Source Code
 The source code is subject to the following license:
 
-<a href="https://github.com/LukasVolgger/join/blob/main/license">![APM](https://img.shields.io/apm/l/vim-mode?label=License&style=for-the-badge)</a>
+[MIT License](./LICENSE.md)
